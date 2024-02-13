@@ -3,9 +3,6 @@
   height: var(--navbarHeight);
   width: 100vw;
   background-color: #ffffff;
-  background-size: contain;
-  background-position: center;
-  background-attachment: fixed;
   align-items: center;
   font-size: 14px;
 }
@@ -39,7 +36,7 @@
   font-size: 1rem;
   cursor: pointer;
   margin-left: 30px;
-  color: #82828a;
+  color: var(--themeAltColor);
 }
 
 .icosearch {
@@ -54,17 +51,17 @@
 .search {
   width: 35px;
   display: flex;
-  border-left: 1px solid #82828a;
+  border-left: 1px solid var(--themeAltColor);
   justify-content: flex-end;
 }
 
 .navactive {
-  color: #89c446;
+  color: var(--themeColor);
   position: relative;
 }
 
 .navactive::after {
-  border-bottom: 2px solid #89c446;
+  border-bottom: 2px solid var(--themeColor);
   bottom: -7px;
   content: "";
   left: 5%;

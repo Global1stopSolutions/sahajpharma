@@ -13,8 +13,8 @@ const Navbar = () => {
             <Image
               src={sahajpharmaLogo}
               alt="Sahaj Pharma"
-              width={70}
-              height={65}
+              width={75}
+              height={70}
               priority
               loading={"eager"}
             />
