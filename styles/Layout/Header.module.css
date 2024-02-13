@@ -32,7 +32,7 @@
 
 .headercontact {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 640px;
 }
 

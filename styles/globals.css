@@ -2,6 +2,7 @@
 
 :root {
   --headerHeight: 45px;
+  --navbarHeight: 90px;
   --sectionWidth: 92%;
 }
 
@@ -33,6 +34,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "Outfit", sans-serif;
+  background-color: grey;
 }
 
 .hidden {
