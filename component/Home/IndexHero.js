@@ -7,7 +7,9 @@ const IndexHero = () => {
     <div className={styles.herocontainer}>
       <div className={styles.heromaincontainer}>
         <div className={styles.heroleft}>
-          <p className={styles.heropreheader}>LETS START YOUR CAREERS HERE!</p>
+          <p className={`${styles.heropreheader} ${styles.lineafter}`}>
+            LETS START YOUR CAREERS HERE!
+          </p>
           <h1 className={styles.heroheader}>
             Looking for a career change? Browse our job listings now!
           </h1>
@@ -16,7 +18,7 @@ const IndexHero = () => {
             orci pretium donec elit platea porta integer maecenas risus lobortis.
           </p>
           <span className={styles.activemember}>
-            <i className={styles.member}></i> 40 K+ Member Active
+            <i className={styles.member}></i> 40 K+ Active Member
           </span>
           <span className={styles.herobtn}>Discover More</span>
         </div>
@@ -24,7 +26,7 @@ const IndexHero = () => {
           <Image
             src={indexheroimg}
             alt="Sahaj Pharma"
-            width={375}
+            width={400}
             height={375}
             priority
             loading={"eager"}

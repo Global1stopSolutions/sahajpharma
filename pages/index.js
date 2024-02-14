@@ -1,4 +1,5 @@
 import IndexHero from "@/component/Home/IndexHero";
+import ServiceCard from "@/component/Home/ServiceCard";
 import Head from "next/head";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <IndexHero />
+        <ServiceCard />
       </main>
     </>
   );

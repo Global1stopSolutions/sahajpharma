@@ -39,6 +39,17 @@
 .heropreheader {
   color: var(--themeColor);
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.lineafter::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: #2b85c5;
+  margin-left: 10px;
 }
 
 .herosubtitle {
