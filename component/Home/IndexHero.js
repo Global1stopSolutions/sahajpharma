@@ -20,7 +20,7 @@ const IndexHero = () => {
           <span className={styles.activemember}>
             <i className={styles.member}></i> 40 K+ Active Member
           </span>
-          <span className={styles.herobtn}>Discover More</span>
+          <span className="btngreen">Discover More</span>
         </div>
         <div className={styles.heroright}>
           <Image

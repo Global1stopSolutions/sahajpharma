@@ -46,3 +46,23 @@ body {
 .show {
   display: block !important;
 }
+
+.btngreen {
+  width: 150px;
+  padding: 12px;
+  background-color: var(--themeColor);
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.btnwhite {
+  width: 150px;
+  padding: 12px;
+  background-color: #ffffff;
+  color: var(--themeColor);
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}

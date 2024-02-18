@@ -1,42 +1,45 @@
-.herocontainer {
+.aboutcontainer {
   display: flex;
-  height: 560px;
+  height: 400px;
   width: 100vw;
-  background-color: #f5f4f5;
+  background-color: #ffffff;
   align-items: center;
   font-size: 14px;
 }
 
-.heromaincontainer {
+.aboutmaincontainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: var(--sectionWidth);
-  margin: 0 auto 60px;
+  margin: 0 auto;
 }
 
-.heroleft {
+.aboutleft {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 45%;
+  position: relative;
 }
 
-.heroright {
+.aboutright {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 55%;
 }
 
-.heroheader {
+.aboutheader {
   letter-spacing: 1px;
   line-height: 1.2;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.heropreheader {
+.aboutpreheader {
   color: var(--themeColor);
   margin-bottom: 10px;
   display: flex;
@@ -52,25 +55,36 @@
   margin-left: 10px;
 }
 
-.herosubtitle {
+.aboutsubtitle {
   color: var(--themeAltColor);
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-.activemember {
+.aboutlabel {
+  position: absolute;
+  right: 100px;
+  top: -30px;
+  background-color: #ffffff;
+  width: 130px;
+  height: 130px;
+  border-radius: 65px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.member {
-  display: flex;
-  width: 100px;
-  height: 35px;
-  background-size: cover;
-  background-position: center;
-  background-image: url(/images/member.png);
-  margin-right: 20px;
+.aboutnumber {
+  color: var(--themeColor);
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.aboutlabeltext {
+  width: 70px;
+  text-transform: capitalize;
 }
