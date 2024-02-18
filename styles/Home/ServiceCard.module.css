@@ -10,7 +10,7 @@
 .servicemaincontainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: var(--sectionWidth);
   margin: 0 auto 60px;
 }

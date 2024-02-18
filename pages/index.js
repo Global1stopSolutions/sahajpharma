@@ -1,5 +1,9 @@
+import About from "@/component/Home/About";
 import IndexHero from "@/component/Home/IndexHero";
+import JoinCommunity from "@/component/Home/JoinCommunity";
+import OurClients from "@/component/Home/OurClients";
 import ServiceCard from "@/component/Home/ServiceCard";
+import WhatOffering from "@/component/Home/WhatOffering";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,6 +18,10 @@ export default function Home() {
       <main>
         <IndexHero />
         <ServiceCard />
+        <WhatOffering />
+        <About />
+        <OurClients />
+        <JoinCommunity />
       </main>
     </>
   );
