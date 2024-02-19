@@ -1,10 +1,11 @@
-import About from "@/component/Home/About";
+import Head from "next/head";
 import IndexHero from "@/component/Home/IndexHero";
-import JoinCommunity from "@/component/Home/JoinCommunity";
-import OurClients from "@/component/Home/OurClients";
 import ServiceCard from "@/component/Home/ServiceCard";
 import WhatOffering from "@/component/Home/WhatOffering";
-import Head from "next/head";
+import About from "@/component/Home/About";
+import OurClients from "@/component/Home/OurClients";
+import JoinCommunity from "@/component/Home/JoinCommunity";
+import Testimonial from "@/component/Home/Testimonial";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <OurClients />
         <JoinCommunity />
+        <Testimonial />
       </main>
     </>
   );
