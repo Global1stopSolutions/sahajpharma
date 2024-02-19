@@ -36,7 +36,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "Outfit", sans-serif;
-  background-color: grey;
+  background-color: #ffffff;
 }
 
 .hidden {
@@ -65,4 +65,8 @@ body {
   text-align: center;
   margin-bottom: 10px;
   cursor: pointer;
+}
+
+.noborder {
+  border: unset !important;
 }

@@ -5,6 +5,8 @@
   font-size: 14px;
   background: #fff url(/images/join-community.png) no-repeat center center;
   background-size: cover;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .joincommaincontainer {
@@ -38,4 +40,44 @@
   color: #ffffff;
   font-weight: 300;
   margin-bottom: 20px;
+}
+
+.communitydetail {
+  display: flex;
+  width: 800px;
+  height: 130px;
+  background-color: #ffffff;
+  margin: -65px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.communitydtlcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.communitydtlnum {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--themeColor);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-right: 2px solid #c7c7c78a;
+}
+
+.communitydtltext {
+  font-size: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-right: 2px solid #c7c7c78a;
 }
