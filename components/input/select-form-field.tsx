@@ -1,0 +1,61 @@
+"use client";
+import React, { ChangeEvent } from "react";
+import { Select, SelectItem } from "@nextui-org/react";
+
+export interface SelectformfieldProps {
+  label: string;
+  name?: string;
+  placeholder: string;
+  labePlacement: string;
+  radius: string;
+  data: any[];
+  value?: string | any;
+  isRequired?: boolean;
+  onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
+}
+
+export const Selectformfield = ({
+  label,
+  placeholder,
+  labePlacement,
+  radius,
+  data,
+  value,
+  isRequired,
+  onChange,
+}: SelectformfieldProps) => {
+  const itemClasses = {
+    base: "data-[hover=true]:text-white data-[selectable=true]:focus:text-white data-[hover=true]:bg-default-100 data-[selectable=true]:focus:bg-primary data-[pressed=true]:opacity-70",
+    inputWrapper: "bg-content1-cultured data-[hover=true]:bg-default-200",
+    label: "text-base text-content1-charlestonGreen font-medium",
+  };
+
+  return (
+    <>
+      <Select
+        items={data}
+        label={label}
+        isRequired={isRequired}
+        value={value}
+        radius={radius as any}
+        placeholder={placeholder}
+        labelPlacement={labePlacement as any}
+        classNames={itemClasses}
+        onChange={onChange}
+        listboxProps={{
+          itemClasses: {
+            base: [
+              "data-[hover=true]:text-white",
+              "data-[hover=true]:bg-default-100",
+              "data-[selectable=true]:focus:bg-primary",
+              "data-[pressed=true]:opacity-70",
+              "data-[selectable=true]:focus:text-white",
+            ],
+          },
+        }}
+      >
+        {(data) => <SelectItem key={data.value}>{data.label}</SelectItem>}
+      </Select>
+    </>
+  );
+};

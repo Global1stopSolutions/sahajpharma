@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "sahaj-pharma";
+  src: url("../../public/fonts/sahaj-pharma.eot");
+  src: url("../../public/fonts/sahaj-pharma.eot") format("embedded-opentype"),
+    url("../../public/fonts/sahaj-pharma.ttf") format("truetype"),
+    url("../../public/fonts/sahaj-pharma.woff") format("woff"),
+    url("../../public/fonts/sahaj-pharma.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ic-"],
+[class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "sahaj-pharma" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ic-share:before {
+  content: "\e919";
+}
+.ic-check:before {
+  content: "\e915";
+}
+.ic-call:before {
+  content: "\e916";
+}
+.ic-mission:before {
+  content: "\e917";
+}
+.ic-vision:before {
+  content: "\e918";
+}
+.ic-arrow-right:before {
+  content: "\e910";
+}
+.ic-comments:before {
+  content: "\e911";
+}
+.ic-user:before {
+  content: "\e912";
+}
+.ic-star:before {
+  content: "\e913";
+}
+.ic-qutoes:before {
+  content: "\e914";
+}
+.ic-free-coaching:before {
+  content: "\e90b";
+}
+.ic-comprehensive-rating:before {
+  content: "\e90c";
+}
+.ic-employee:before {
+  content: "\e90d";
+}
+.ic-verify:before {
+  content: "\e90e";
+}
+.ic-job:before {
+  content: "\e90f";
+}
+.ic-globe:before {
+  content: "\e90a";
+}
+.ic-talent-agency:before {
+  content: "\e900";
+}
+.ic-portal-job:before {
+  content: "\e906";
+}
+.ic-search:before {
+  content: "\e907";
+}
+.ic-carrer-coaching:before {
+  content: "\e908";
+}
+.ic-twitter:before {
+  content: "\e901";
+}
+.ic-location-on:before {
+  content: "\e902";
+}
+.ic-linkedIn:before {
+  content: "\e903";
+}
+.ic-facebook:before {
+  content: "\e904";
+}
+.ic-book-appointment:before {
+  content: "\e905";
+}
+.ic-mail:before {
+  content: "\e909";
+}
