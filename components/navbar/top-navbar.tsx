@@ -37,7 +37,7 @@ export const Topnavbar = () => {
                 </Link>
               ))}
             </div>
-            <LangDropdown />
+            {/* <LangDropdown /> */}
           </div>
         </div>
       </Containerwrapper>

@@ -2,6 +2,7 @@ import React from "react";
 import { ButtonDefault } from "./button/button";
 import { JOB_DETAIl_SUMMARY } from "@/constants";
 import { Containerwrapper } from "./container/container-wrapper";
+import { Link } from "@nextui-org/link";
 
 export const Expertcommunity = () => {
   return (
@@ -21,7 +22,9 @@ export const Expertcommunity = () => {
             voluptates obcaecati libero, laudantium sit quisquam asperiores
             consequatur provident eos aperiam quibusdam.
           </p>
-          <ButtonDefault title="Discover More" variant="btn-primary-inverse" />
+          <Link  href="/job-seeker">
+            <ButtonDefault title="Discover More" variant="btn-primary-inverse" />
+          </Link>
         </div>
         <div>
           <div className="bg-white px-unit-lg py-unit-xl rounded-lg max-w-[70%] mx-auto shadow-small relative top-[50px]">

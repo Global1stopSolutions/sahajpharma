@@ -7,10 +7,10 @@ export const COMPANY_DETAIL = [
     icon: "ic-mail",
     description: "cv@sahajpharma.com",
   },
-  {
-    icon: "ic-book-appointment",
-    description: "Book Appointment",
-  },
+  // {
+  //   icon: "ic-book-appointment",
+  //   description: "Book Appointment",
+  // },
 ];
 
 export const SOCIAL_LINKS = [
@@ -382,21 +382,21 @@ export const COMPANY = [
     link: "/",
     label: "Carrers",
   },
-  {
-    link: "/",
-    label: "News & Article",
-  },
-  {
-    link: "/",
-    label: "Legal Notice",
-  },
+  // {
+  //   link: "/",
+  //   label: "News & Article",
+  // },
+  // {
+  //   link: "/",
+  //   label: "Legal Notice",
+  // },
 ];
 
 export const FOOTER_LINK_DETAILS = [
-  {
-    link: "/",
-    label: "Term of use",
-  },
+  // {
+  //   link: "/",
+  //   label: "Term of use",
+  // },
   {
     link: "/",
     label: "Privacy Policy",

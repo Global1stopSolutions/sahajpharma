@@ -12,14 +12,14 @@ export const siteConfig = {
       label: "About Us",
       href: "/about-us",
     },
-    {
-      label: "Current Opening",
-      href: "/current-opening",
-    },
-    {
-      label: "Blogs",
-      href: "/blogs",
-    },
+    // {
+    //   label: "Current Opening",
+    //   href: "/current-opening",
+    // },
+    // {
+    //   label: "Blogs",
+    //   href: "/blogs",
+    // },
     {
       label: "Contact",
       href: "/contact",
@@ -34,14 +34,14 @@ export const siteConfig = {
       label: "About Us",
       href: "/about-us",
     },
-    {
-      label: "Current Opening",
-      href: "/current-opening",
-    },
-    {
-      label: "Blogs",
-      href: "/blogs",
-    },
+    // {
+    //   label: "Current Opening",
+    //   href: "/current-opening",
+    // },
+    // {
+    //   label: "Blogs",
+    //   href: "/blogs",
+    // },
     {
       label: "Conatct",
       href: "/contact",

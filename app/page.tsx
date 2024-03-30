@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <JobOpening />
+      {/* Hide Section (@Mandar) 
+      <JobOpening /> 
+      */}
       <AboutDetail>
         <HeadingDetail
           titleWidth="w-[100%]"
@@ -27,8 +29,10 @@ export default function Home() {
       <Expertcommunity />
       <Testimonial />
       <Companybenfits />
-      <Faq />
+      {/*  Hide Section (@Mandar) 
+      <Faq /> 
       <Newsarticle />
+      */}
     </>
   );
 }
