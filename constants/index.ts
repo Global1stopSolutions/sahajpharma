@@ -7,10 +7,10 @@ export const COMPANY_DETAIL = [
     icon: "ic-mail",
     description: "cv@sahajpharma.com",
   },
-  {
-    icon: "ic-book-appointment",
-    description: "Book Appointment",
-  },
+  // {
+  //   icon: "ic-book-appointment",
+  //   description: "Book Appointment",
+  // },
 ];
 
 export const SOCIAL_LINKS = [
