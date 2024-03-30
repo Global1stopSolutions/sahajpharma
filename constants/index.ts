@@ -382,21 +382,21 @@ export const COMPANY = [
     link: "/",
     label: "Carrers",
   },
-  {
-    link: "/",
-    label: "News & Article",
-  },
-  {
-    link: "/",
-    label: "Legal Notice",
-  },
+  // {
+  //   link: "/",
+  //   label: "News & Article",
+  // },
+  // {
+  //   link: "/",
+  //   label: "Legal Notice",
+  // },
 ];
 
 export const FOOTER_LINK_DETAILS = [
-  {
-    link: "/",
-    label: "Term of use",
-  },
+  // {
+  //   link: "/",
+  //   label: "Term of use",
+  // },
   {
     link: "/",
     label: "Privacy Policy",

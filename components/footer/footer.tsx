@@ -38,7 +38,9 @@ export const Footer = () => {
                   Sociosqu eros cras magna phasellus conubia semper netus lectus
                   lacinia mattis sed.
                 </p>
-                <ButtonDefault variant="btn-primary" title="Apply Now" />
+                <Link  href="/job-seeker">
+                  <ButtonDefault variant="btn-primary" title="Apply Now" />
+                </Link>
               </div>
               <div className="absolute right-0 top-[-144px]">
                 <Image
@@ -81,7 +83,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col space-y-unit-md col-start-7 col-span-2 mt-unit-lg">
+          {/* <div className="flex flex-col space-y-unit-md col-start-7 col-span-2 mt-unit-lg">
             <label className="text-xl text-white font-semibold">
               Categories
             </label>
@@ -97,8 +99,9 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="flex flex-col space-y-unit-md col-start-9 col-span-2 mt-unit-lg">
+          </div> */}
+          <div className="flex flex-col space-y-unit-md col-start-11 col-span-2 mt-unit-lg">
+{/*       (NOTE: Temp change. Replace later this class @Mandar): flex flex-col space-y-unit-md col-start-9 col-span-2 mt-unit-lg        */}
             <label className="text-xl text-white font-semibold">Company</label>
             <ul>
               {COMPANY.map((company, index) => (
@@ -113,7 +116,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col col-span-2 mt-unit-lg">
+          {/* <div className="flex flex-col col-span-2 mt-unit-lg">
             <label className="text-xl text-white font-semibold">
               Newsletter
             </label>
@@ -130,7 +133,7 @@ export const Footer = () => {
               />
               <ButtonDefault variant="btn-primary" title="Sign Up" full />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-gray-600 my-unit-lg" />
         <div className="flex items-center justify-between ">

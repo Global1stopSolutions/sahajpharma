@@ -10,8 +10,8 @@ export const FeatureCards = () => {
         {FEATURES_DETAIL.map((featureDetails, index) => (
           <Card
             key={index}
-            className="rounded-lg hover:bg-primary hover:text-white group realtive cursor-pointer"
-          >
+            className="rounded-lg hover:bg-primary hover:text-white group realtive"
+          > {/* Removed class: cursor-pointer (@Mandar) */}
             <CardBody className="items-center space-y-unit-md py-unit-xl">
               <i
                 className={`text-primary text-5xl group-hover:text-white ${featureDetails.icon}`}

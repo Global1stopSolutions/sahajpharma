@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "@nextui-org/react";
+import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "./button/button";
 import { Containerwrapper } from "./container/container-wrapper";
@@ -42,7 +42,9 @@ export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
           <div className="basis-3/6">
             {children}
             <div className="mt-unit-lg">
-              <ButtonDefault title="Discover More" variant="btn-primary" />
+              <Link  href="/job-seeker">
+                <ButtonDefault title="Discover More" variant="btn-primary" />
+              </Link>
             </div>
           </div>
         </div>
