@@ -1,6 +1,8 @@
 // components/MultiStepForm.tsx
 "use client";
 import { useState } from "react";
+import axios from "axios";
+import { Link } from "@nextui-org/react";
 import { Inputformfield } from "../input/input-form-field";
 import { Selectformfield } from "../input/select-form-field";
 import { ButtonDefault } from "../button/button";
@@ -11,19 +13,9 @@ export const MultiStepForm = () => {
     name: "",
     emailID: "",
     dateOfBirth: "",
-    selectGender: "",
+    gender: "",
     phoneNo: "",
     mobileNo: "",
-    gender: [
-      {
-        label: "Male",
-        value: "Male",
-      },
-      {
-        label: "female",
-        value: "female",
-      },
-    ],
     qualification: "",
     totalExperience: "",
     currentLocation: "",
@@ -35,13 +27,10 @@ export const MultiStepForm = () => {
     preferredLocation: "",
     previousEmployer: "",
     chooseFile: "",
-    // Add more form fields as needed
   });
 
   const handleChange = (
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -54,14 +43,32 @@ export const MultiStepForm = () => {
     setStep(step - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    try {
+      const resp = await axios.post("/api/", {
+        params: formData,
+        operation: "RegistrationForm",
+      });
+
+      if (resp.status == 200) {
+        console.log(resp.data);
+      }
+    } catch (error) {
+      console.error(error);
+    }
     console.log("Form submitted:", formData);
-    // Reset form data or do something else after submission
   };
 
   return (
     <div className="w-full p-unit-lg">
+      <Link
+        target="_blank"
+        href="https://www.naukri.com/nlogin/login?URL=https%3A%2F%2Fapply.naukri.com%2Fapply%2Fcareer-site%3Fapplytype%3Dsingle%26ApplyMode%3D1%26src%3DDROPCV%26applySrc%3DDROPCV%26jobId%3D3383562DCV14610%26logstr%3Dcareersite%26applyRedirectUrl%3Dhttp%3A%2F%2Fjobs.sahajpharma.com%2Fsubmit-profile%2F%3Fdcv%3D1"
+      >
+        <ButtonDefault variant="btn-primary" title="Submit Naukri Profile" />
+      </Link>
+      <div className="border-t border-lightgray-600 my-unit-lg" />
       <div className="flex justify-between items-center space-x-4 mb-unit-2xl relative">
         <div
           className={`flex items-center justify-center w-[48px] h-[48px] rounded-full z-10 ${
@@ -92,7 +99,7 @@ export const MultiStepForm = () => {
         </div>
         <div className="absolute w-full h-[2px] bg-content1-cultured left-[-8px]"></div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         {step === 1 && (
           <div className="grid grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
             <Inputformfield
@@ -100,6 +107,7 @@ export const MultiStepForm = () => {
               name="name"
               id="name"
               type="text"
+              isRequired={true}
               labePlacement="outside"
               placeholder="Name"
               radius="sm"
@@ -136,11 +144,21 @@ export const MultiStepForm = () => {
             <Selectformfield
               radius="sm"
               label="Gender"
+              name="gender"
               placeholder="Gender"
               isRequired={true}
               labePlacement="outside"
               value={formData.gender}
-              data={formData.gender}
+              data={[
+                {
+                  label: "Male",
+                  value: "Male",
+                },
+                {
+                  label: "female",
+                  value: "female",
+                },
+              ]}
               onChange={handleChange}
             />
 
@@ -194,7 +212,7 @@ export const MultiStepForm = () => {
               isRequired={true}
               type="text"
               labePlacement="outside"
-              placeholder="Qualification"
+              placeholder="Total Experience"
               radius="sm"
               variant="text-form-field"
               value={formData.totalExperience}
@@ -279,7 +297,7 @@ export const MultiStepForm = () => {
               placeholder="Expected CTC"
               radius="sm"
               variant="text-form-field"
-              value={formData.currentCTC}
+              value={formData.expectedCTC}
               onChange={handleChange}
             />
             <Inputformfield
@@ -319,30 +337,16 @@ export const MultiStepForm = () => {
                 placeholder="Choose File"
                 radius="sm"
                 variant="text-form-field"
-                value={formData.previousEmployer}
+                value={formData.chooseFile}
                 onChange={handleChange}
               />
             </div>
           </div>
         )}
         <div className="mt-unit-xl flex justify-end space-x-unit-md">
-          {step > 1 && (
-            <ButtonDefault
-              variant="btn-primary"
-              onPress={prevStep}
-              title="Previous"
-            />
-          )}
-          {step < 3 && (
-            <ButtonDefault
-              variant="btn-primary"
-              onPress={nextStep}
-              title="Next"
-            />
-          )}
-          {step === 3 && (
-            <ButtonDefault variant="btn-primary" type="submit" title="Submit" />
-          )}
+          {step > 1 && <ButtonDefault variant="btn-primary" onPress={prevStep} title="Previous" />}
+          {step < 3 && <ButtonDefault variant="btn-primary" onPress={nextStep} title="Next" />}
+          {step === 3 && <ButtonDefault variant="btn-primary" type="submit" title="Submit" />}
         </div>
       </form>
     </div>
