@@ -3,12 +3,7 @@ import React from "react";
 import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "../button/button";
-import {
-  CATEGORIES,
-  COMPANY,
-  FOOTER_LINK_DETAILS,
-  SOCIAL_LINKS,
-} from "@/constants";
+import { CATEGORIES, COMPANY, FOOTER_LINK_DETAILS, SOCIAL_LINKS } from "@/constants";
 import { Inputformfield } from "../input/input-form-field";
 import { useState, useEffect } from "react";
 import { Containerwrapper } from "../container/container-wrapper";
@@ -17,15 +12,11 @@ export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    // Update the year when the component mounts
     setYear(new Date().getFullYear());
   }, []);
   return (
     <>
-      <Containerwrapper
-        isBackground
-        className="bg-content1-raisinBlack mt-unit-6xl"
-      >
+      <Containerwrapper isBackground className="bg-content1-raisinBlack mt-unit-6xl">
         <div className="bg-white p-unit-xl rounded-lg mt-[-20%] shadow-medium">
           <div className="carrer-job">
             <div className="overlay" />
@@ -35,10 +26,9 @@ export const Footer = () => {
                   Looking for a career change? Browse our job listings now!
                 </label>
                 <p className="text-content1-oldsilver text-small w-[60%]">
-                  Sociosqu eros cras magna phasellus conubia semper netus lectus
-                  lacinia mattis sed.
+                  Sociosqu eros cras magna phasellus conubia semper netus lectus lacinia mattis sed.
                 </p>
-                <Link  href="/job-seeker">
+                <Link href="/job-seeker">
                   <ButtonDefault variant="btn-primary" title="Apply Now" />
                 </Link>
               </div>
@@ -69,9 +59,9 @@ export const Footer = () => {
               quality={100}
             />
             <p className="text-white text-tiny">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem
-              necessitatibus voluptatum nulla id eius sit odio repudiandae
-              adipisci magnam dolore vero saepe dolor pariatur.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem necessitatibus
+              voluptatum nulla id eius sit odio repudiandae adipisci magnam dolore vero saepe dolor
+              pariatur.
             </p>
             <ul className="flex space-x-unit-md">
               {SOCIAL_LINKS.map((socialLinks, index) => (
@@ -101,7 +91,7 @@ export const Footer = () => {
             </ul>
           </div> */}
           <div className="flex flex-col space-y-unit-md col-start-11 col-span-2 mt-unit-lg">
-{/*       (NOTE: Temp change. Replace later this class @Mandar): flex flex-col space-y-unit-md col-start-9 col-span-2 mt-unit-lg        */}
+            {/* (NOTE: Temp change. Replace later this class: flex flex-col space-y-unit-md col-start-9 col-span-2 mt-unit-lg */}
             <label className="text-xl text-white font-semibold">Company</label>
             <ul>
               {COMPANY.map((company, index) => (
@@ -137,7 +127,7 @@ export const Footer = () => {
         </div>
         <div className="border-t border-gray-600 my-unit-lg" />
         <div className="flex items-center justify-between ">
-          <p className="text-white text-tiny">{`© ${year} Copyrights by Pkdesign. All Rights Reserved`}</p>
+          <p className="text-white text-tiny">{`© ${year} Copyrights by Globalsolutions. All Rights Reserved`}</p>
           <div className="flex divide-x-[2px] divide-primary">
             {FOOTER_LINK_DETAILS.map((footerLink, index) => (
               <div key={index} className="flex items-center px-unit-xs">
