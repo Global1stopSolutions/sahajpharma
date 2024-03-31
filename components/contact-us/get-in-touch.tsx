@@ -36,15 +36,11 @@ export const Getintouch = () => {
                             </label>
                             <span className="h-1 w-8 bg-secondary block"></span>
                           </div>
-                          <p className="text-content1-oldsilver font-light">
-                            {item.address}
-                          </p>
+                          <p className="text-content1-oldsilver font-light">{item.address}</p>
                         </div>
                       </div>
                     ))}
-                    <div className="text-content1-oldsilver font-light">
-                      {mainItem.otherDetail}
-                    </div>
+                    <div className="text-content1-oldsilver font-light">{mainItem.otherDetail}</div>
                   </div>
                 </div>
               </div>

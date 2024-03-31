@@ -1,15 +1,18 @@
 export const COMPANY_DETAIL = [
   {
     icon: "ic-location-on",
-    description: "Sahaj Pharma (for HR Solutions), Vadodra",
+    description: "Sahaj Pharma (for HR Solutions), Vadodara",
+    href: "https://www.google.com/maps/place/Sahaj+Pharma+For+HR+Solutions/@22.2950462,73.164115,17z/data=!4m6!3m5!1s0x395fc61e71660c75:0xf8087fd44f877fb6!8m2!3d22.295076!4d73.163997!16s%2Fg%2F11c71829b8?hl=en&entry=ttu",
   },
   {
     icon: "ic-mail",
     description: "cv@sahajpharma.com",
+    href: "mailto:cv@sahajpharma.com",
   },
   // {
   //   icon: "ic-book-appointment",
   //   description: "Book Appointment",
+  //   href: "",
   // },
 ];
 
@@ -32,20 +35,17 @@ export const FEATURES_DETAIL = [
   {
     icon: "ic-talent-agency",
     label: "Talents Agency",
-    description:
-      "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
+    description: "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
   },
   {
     icon: "ic-portal-job",
     label: "Portal Job",
-    description:
-      "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
+    description: "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
   },
   {
     icon: "ic-carrer-coaching",
     label: "Carrer Coaching",
-    description:
-      "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
+    description: "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
   },
 ];
 
@@ -194,15 +194,6 @@ export const CLIENT_IMG = [
   {
     clientImg: "/images/client-3.png",
   },
-  {
-    clientImg: "/images/client-1.png",
-  },
-  {
-    clientImg: "/images/client-2.png",
-  },
-  {
-    clientImg: "/images/client-3.png",
-  },
 ];
 
 export const JOB_DETAIl_SUMMARY = [
@@ -228,20 +219,17 @@ export const COMPANY_BENIFTS = [
   {
     icon: "ic-employee",
     label: "By real employees",
-    description:
-      "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
+    description: "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
   },
   {
     icon: "ic-comprehensive-rating",
     label: "Comprehensive ratings",
-    description:
-      "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
+    description: "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
   },
   {
     icon: "ic-free-coaching",
     label: "Free Coaching",
-    description:
-      "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
+    description: "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
   },
 ];
 
@@ -483,11 +471,11 @@ export const CONTACT_DETAILS = [
         address:
           "Sahaj Pharma (for HR Solutions)322, Rajpath Complex,Opp. Essar Petrol Pump,Vasna – Bhayli Road.Vadodara – 391410 (Gujarat)",
       },
-      {
-        officeName: "Vapi office",
-        address:
-          "Sahaj Pharma (for HR Solutions)119,Govinda Complex,N.H.08,Vapi G.I.D.C Char rasta,Vapi-396 195",
-      },
+      // {
+      //   officeName: "Vapi office",
+      //   address:
+      //     "Sahaj Pharma (for HR Solutions)119,Govinda Complex,N.H.08,Vapi G.I.D.C Char rasta,Vapi-396 195",
+      // },
     ],
   },
   {
