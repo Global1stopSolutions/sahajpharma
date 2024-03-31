@@ -198,19 +198,23 @@ export const CLIENT_IMG = [
 
 export const JOB_DETAIl_SUMMARY = [
   {
-    number: "540+",
+    current: 1,
+    number: 540,
     description: " Member active",
   },
   {
-    number: "40+",
+    current: 1,
+    number: 40,
     description: "Companies",
   },
   {
-    number: "240+",
+    current: 1,
+    number: 240,
     description: "Expert Trainers",
   },
   {
-    number: "10+",
+    current: 1,
+    number: 10,
     description: "Year of  experience",
   },
 ];

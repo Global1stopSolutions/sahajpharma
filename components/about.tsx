@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "./button/button";
@@ -10,15 +11,24 @@ export interface AboutDetailProps {
 }
 
 export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
+  const [yearofExperience, setYearofExperience] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (yearofExperience < 10) {
+        setYearofExperience((prevNumber) => prevNumber + 1);
+      } else {
+        clearInterval(interval);
+      }
+    }, 100);
+    return () => clearInterval(interval);
+  }, [yearofExperience]);
+
   return (
     <>
       <Containerwrapper>
         <div className="flex">
-          <div
-            className={`basis-3/6 relative ${
-              imgageRight ? "order-2 flex justify-center" : ""
-            }`}
-          >
+          <div className={`basis-3/6 relative ${imgageRight ? "order-2 flex justify-center" : ""}`}>
             <Image
               as={NextImage}
               src="/images/about-us.png"
@@ -28,12 +38,8 @@ export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
               loading="eager"
               quality={100}
             />
-            <div
-              className={`year-experience ${
-                imgageRight ? "right-0" : "right-[50px]"
-              }`}
-            >
-              <span className="text-primary font-semibold text-4xl">10+</span>
+            <div className={`year-experience ${imgageRight ? "right-0" : "right-[50px]"}`}>
+              <span className="text-primary font-semibold text-4xl">{yearofExperience}+</span>
               <p className="uppercase font-semibold text-base text-content1-quartz">
                 Year of Experience
               </p>
@@ -42,7 +48,7 @@ export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
           <div className="basis-3/6">
             {children}
             <div className="mt-unit-lg">
-              <Link  href="/job-seeker">
+              <Link href="/job-seeker">
                 <ButtonDefault title="Discover More" variant="btn-primary" />
               </Link>
             </div>
