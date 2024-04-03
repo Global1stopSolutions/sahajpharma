@@ -51,13 +51,14 @@ export const MultiStepForm = () => {
         operation: "RegistrationForm",
       });
 
-      if (resp.status == 200) {
-        console.log(resp.data);
+      if (resp.data.success) {
+        console.log(resp.data.message);
+      } else {
+        console.log(resp.data.message);
       }
     } catch (error) {
       console.error(error);
     }
-    console.log("Form submitted:", formData);
   };
 
   return (
