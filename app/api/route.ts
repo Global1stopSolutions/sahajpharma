@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import path from "path"; // Import the 'path' module
 
 // const transporter = nodemailer.createTransport({
 //   host: "smtp.example.com",
@@ -39,11 +40,17 @@ async function handlePostOperation(operation: string, params: any) {
 async function registrationForm(params: any) {
   const readableContent: string = getReadableContent(params);
 
+  const attachment = {
+    filename: "dummy.pdf",
+    path: path.join(process.cwd(), "public", "dummy.pdf"),
+  };
+
   const mailOptions = {
     from: "Sahaj Pharma<cv@sahajpharma.com>",
     to: "harshit3228@gmail.com",
     subject: "New Registration",
     text: readableContent,
+    attachments: [attachment],
   };
 
   try {
