@@ -16,6 +16,7 @@ export interface SelectformfieldProps {
 
 export const Selectformfield = ({
   label,
+  name,
   placeholder,
   labePlacement,
   radius,
@@ -35,6 +36,7 @@ export const Selectformfield = ({
       <Select
         items={data}
         label={label}
+        name={name}
         isRequired={isRequired}
         value={value}
         radius={radius as any}
