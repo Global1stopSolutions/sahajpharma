@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import { Subpagehero } from "../sub-page-hero/sub-page-hero";
 import { Containerwrapper } from "../container/container-wrapper";
@@ -8,17 +9,21 @@ import { Inputformfield } from "../input/input-form-field";
 import { Selectformfield } from "../input/select-form-field";
 import { DEPARTMENT } from "@/constants";
 import { ButtonDefault } from "../button/button";
+import { isValidEmail } from "@/lib/commonfunction";
 
 export const Sendusmessage = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     phoneNo: "",
-    emailID: "",
+    emailId: "",
     divison: "",
     subject: "",
     message: "",
   });
+  const emailMsgRef = useRef<HTMLInputElement>(null);
+  const nameMsgRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
@@ -28,6 +33,35 @@ export const Sendusmessage = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (nameMsgRef.current) {
+      if (formData.name.trim().length === 0) {
+        nameMsgRef.current.style.display = "block";
+        nameMsgRef.current.textContent = "Name can't be blank";
+        return;
+      } else {
+        nameMsgRef.current.style.display = "none";
+      }
+    }
+
+    if (emailMsgRef.current) {
+      if (formData.emailId.trim().length === 0) {
+        emailMsgRef.current.style.display = "block";
+        emailMsgRef.current.textContent = "Email Id can't be blank";
+        return;
+      } else {
+        emailMsgRef.current.style.display = "none";
+      }
+
+      if (!isValidEmail(formData.emailId)) {
+        emailMsgRef.current.style.display = "block";
+        emailMsgRef.current.textContent = "Please enter a valid email id";
+        return;
+      } else {
+        emailMsgRef.current.style.display = "none";
+      }
+    }
+
     try {
       const resp = await axios.post("/api/", {
         params: formData,
@@ -36,6 +70,7 @@ export const Sendusmessage = () => {
 
       if (resp.data.success) {
         console.log(resp.data.message);
+        router.push("/");
       } else {
         console.log(resp.data.message);
       }
@@ -61,11 +96,13 @@ export const Sendusmessage = () => {
                   type="text"
                   labePlacement="outside"
                   placeholder="Name"
+                  isRequired={true}
                   radius="sm"
                   variant="text-form-field"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  errorMsgRef={nameMsgRef}
                 />
                 <Inputformfield
                   label="Company"
@@ -92,14 +129,16 @@ export const Sendusmessage = () => {
                 <Inputformfield
                   label="Email"
                   type="email"
+                  id="email"
                   labePlacement="outside"
                   placeholder="Email"
                   isRequired={true}
                   radius="sm"
                   variant="text-form-field"
-                  name="emailID"
-                  value={formData.emailID}
+                  name="emailId"
+                  value={formData.emailId}
                   onChange={handleChange}
+                  errorMsgRef={emailMsgRef}
                 />
                 <Selectformfield
                   radius="sm"

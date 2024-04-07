@@ -1,17 +1,20 @@
 // components/MultiStepForm.tsx
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import { Link } from "@nextui-org/react";
 import { Inputformfield } from "../input/input-form-field";
 import { Selectformfield } from "../input/select-form-field";
 import { ButtonDefault } from "../button/button";
+import { isValidEmail } from "@/lib/commonfunction";
 
 export const MultiStepForm = () => {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
-    emailID: "",
+    emailId: "",
     dateOfBirth: "",
     gender: "",
     phoneNo: "",
@@ -29,14 +32,109 @@ export const MultiStepForm = () => {
     chooseFile: "",
   });
 
+  const nameMsgRef = useRef<HTMLInputElement>(null);
+  const emailMsgRef = useRef<HTMLInputElement>(null);
+  const dobMsgRef = useRef<HTMLInputElement>(null);
+  const genderMsgRef = useRef<HTMLInputElement>(null);
+  const mobileMsgRef = useRef<HTMLInputElement>(null);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateFields = (step: number) => {
+    let isValid = true;
+    switch (step) {
+      case 1:
+        if (nameMsgRef.current) {
+          nameMsgRef.current.style.display = "none";
+        }
+        if (emailMsgRef.current) {
+          emailMsgRef.current.style.display = "none";
+        }
+        if (dobMsgRef.current) {
+          dobMsgRef.current.style.display = "none";
+        }
+        if (genderMsgRef.current) {
+          genderMsgRef.current.style.display = "none";
+        }
+        if (mobileMsgRef.current) {
+          mobileMsgRef.current.style.display = "none";
+        }
+        if (isValid && !formData.name) {
+          if (nameMsgRef.current) {
+            nameMsgRef.current.style.display = "block";
+            nameMsgRef.current.textContent = "Name can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.emailId) {
+          if (emailMsgRef.current) {
+            emailMsgRef.current.style.display = "block";
+            emailMsgRef.current.textContent = "Email Id can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !isValidEmail(formData.emailId)) {
+          if (emailMsgRef.current) {
+            emailMsgRef.current.style.display = "block";
+            emailMsgRef.current.textContent = "Please enter a valid email id";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.dateOfBirth) {
+          if (dobMsgRef.current) {
+            dobMsgRef.current.style.display = "block";
+            dobMsgRef.current.textContent = "Date Of Birth can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.gender) {
+          if (genderMsgRef.current) {
+            genderMsgRef.current.style.display = "block";
+            genderMsgRef.current.textContent = "Gender can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.mobileNo) {
+          if (mobileMsgRef.current) {
+            mobileMsgRef.current.style.display = "block";
+            mobileMsgRef.current.textContent = "Mobile No can't be blank";
+          }
+          isValid = false;
+        }
+        break;
+      case 2:
+        if (isValid && !formData.qualification) {
+          isValid = false;
+        }
+        if (isValid && !formData.totalExperience) {
+          isValid = false;
+        }
+        if (isValid && !formData.currentLocation) {
+          isValid = false;
+        }
+        if (isValid && !formData.lookingForPharma) {
+          isValid = false;
+        }
+        if (isValid && !formData.currentCompany) {
+          isValid = false;
+        }
+        if (isValid && !formData.currentPosition) {
+          isValid = false;
+        }
+        break;
+    }
+    return isValid;
+  };
+
   const nextStep = () => {
-    setStep(step + 1);
+    const isValid = validateFields(step);
+    if (isValid) {
+      setStep(step + 1);
+    }
   };
 
   const prevStep = () => {
@@ -53,6 +151,7 @@ export const MultiStepForm = () => {
 
       if (resp.data.success) {
         console.log(resp.data.message);
+        router.push("/");
       } else {
         console.log(resp.data.message);
       }
@@ -115,19 +214,21 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.name}
               onChange={handleChange}
+              errorMsgRef={nameMsgRef}
             />
             <Inputformfield
               label="Email ID"
-              name="emailID"
-              id="emailID"
+              name="emailId"
+              id="emailId"
               type="email"
               isRequired={true}
               labePlacement="outside"
               placeholder="Email ID"
               radius="sm"
               variant="text-form-field"
-              value={formData.emailID}
+              value={formData.emailId}
               onChange={handleChange}
+              errorMsgRef={emailMsgRef}
             />
             <Inputformfield
               label="Date Of Birth"
@@ -141,6 +242,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.dateOfBirth}
               onChange={handleChange}
+              errorMsgRef={dobMsgRef}
             />
             <Selectformfield
               radius="sm"
@@ -161,6 +263,7 @@ export const MultiStepForm = () => {
                 },
               ]}
               onChange={handleChange}
+              errorMsgRef={genderMsgRef}
             />
 
             <Inputformfield
@@ -187,6 +290,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.mobileNo}
               onChange={handleChange}
+              errorMsgRef={mobileMsgRef}
             />
           </div>
         )}

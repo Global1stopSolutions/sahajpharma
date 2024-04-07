@@ -12,6 +12,7 @@ export interface SelectformfieldProps {
   value?: string | any;
   isRequired?: boolean;
   onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
+  errorMsgRef?: any;
 }
 
 export const Selectformfield = ({
@@ -24,6 +25,7 @@ export const Selectformfield = ({
   value,
   isRequired,
   onChange,
+  errorMsgRef,
 }: SelectformfieldProps) => {
   const itemClasses = {
     base: "data-[hover=true]:text-white data-[selectable=true]:focus:text-white data-[hover=true]:bg-default-100 data-[selectable=true]:focus:bg-primary data-[pressed=true]:opacity-70",
@@ -32,7 +34,7 @@ export const Selectformfield = ({
   };
 
   return (
-    <>
+    <div className="formcontainer">
       <Select
         items={data}
         label={label}
@@ -58,6 +60,7 @@ export const Selectformfield = ({
       >
         {(data) => <SelectItem key={data.value}>{data.label}</SelectItem>}
       </Select>
-    </>
+      {isRequired && <span ref={errorMsgRef} className="formerror"></span>}
+    </div>
   );
 };

@@ -16,8 +16,8 @@ export interface InputformfieldProps {
   endContent?: any;
   className?: string;
   isLabelHidden?: boolean;
-
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  errorMsgRef?: any;
 }
 
 export const Inputformfield = ({
@@ -36,35 +36,39 @@ export const Inputformfield = ({
   className,
   isLabelHidden = false,
   onChange,
+  errorMsgRef,
 }: InputformfieldProps) => {
   return (
     <>
-      <div>
+      <div className="formcontainer">
         {variant === "text-form-field" && (
-          <Input
-            radius={radius}
-            name={name}
-            id={id}
-            size={size}
-            type={type}
-            label={label}
-            value={value}
-            placeholder={placeholder}
-            labelPlacement={labePlacement}
-            isRequired={isRequired}
-            onChange={onChange}
-            classNames={{
-              base: `${isLabelHidden ? "data-[has-label=true]:mt-0" : ""}`,
-              inputWrapper: "bg-content1-cultured data-[hover=true]:bg-default-200",
-              label: `${
-                isLabelHidden
-                  ? "hidden"
-                  : "text-base text-content1-charlestonGreen font-medium label-hidden"
-              }`,
-            }}
-            endContent={endContent}
-            className={className}
-          />
+          <>
+            <Input
+              radius={radius}
+              name={name}
+              id={id}
+              size={size}
+              type={type}
+              label={label}
+              value={value}
+              placeholder={placeholder}
+              labelPlacement={labePlacement}
+              isRequired={isRequired}
+              onChange={onChange}
+              classNames={{
+                base: `${isLabelHidden ? "data-[has-label=true]:mt-0" : ""}`,
+                inputWrapper: "bg-content1-cultured data-[hover=true]:bg-default-200",
+                label: `${
+                  isLabelHidden
+                    ? "hidden"
+                    : "text-base text-content1-charlestonGreen font-medium label-hidden"
+                }`,
+              }}
+              endContent={endContent}
+              className={className}
+            />
+            {isRequired && <span ref={errorMsgRef} className="formerror"></span>}
+          </>
         )}
 
         {variant === "textarea" && (
