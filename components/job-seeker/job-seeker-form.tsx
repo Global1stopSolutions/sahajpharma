@@ -37,6 +37,16 @@ export const MultiStepForm = () => {
   const dobMsgRef = useRef<HTMLInputElement>(null);
   const genderMsgRef = useRef<HTMLInputElement>(null);
   const mobileMsgRef = useRef<HTMLInputElement>(null);
+  const qualificationMsgRef = useRef<HTMLInputElement>(null);
+  const totalExperienceMsgRef = useRef<HTMLInputElement>(null);
+  const currentLocationMsgRef = useRef<HTMLInputElement>(null);
+  const lookingForPharmaMsgRef = useRef<HTMLInputElement>(null);
+  const currentCompanyMsgRef = useRef<HTMLInputElement>(null);
+  const currentPositionMsgRef = useRef<HTMLInputElement>(null);
+  const currentCTCMsgRef = useRef<HTMLInputElement>(null);
+  const expectedCTCMsgRef = useRef<HTMLInputElement>(null);
+  const preferredLocationMsgRef = useRef<HTMLInputElement>(null);
+  const previousEmployerMsgRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
@@ -107,22 +117,106 @@ export const MultiStepForm = () => {
         }
         break;
       case 2:
+        if (qualificationMsgRef.current) {
+          qualificationMsgRef.current.style.display = "none";
+        }
+        if (totalExperienceMsgRef.current) {
+          totalExperienceMsgRef.current.style.display = "none";
+        }
+        if (currentLocationMsgRef.current) {
+          currentLocationMsgRef.current.style.display = "none";
+        }
+        if (lookingForPharmaMsgRef.current) {
+          lookingForPharmaMsgRef.current.style.display = "none";
+        }
+        if (currentCompanyMsgRef.current) {
+          currentCompanyMsgRef.current.style.display = "none";
+        }
+        if (currentPositionMsgRef.current) {
+          currentPositionMsgRef.current.style.display = "none";
+        }
         if (isValid && !formData.qualification) {
+          if (qualificationMsgRef.current) {
+            qualificationMsgRef.current.style.display = "block";
+            qualificationMsgRef.current.textContent = "Qualification can't be blank";
+          }
           isValid = false;
         }
         if (isValid && !formData.totalExperience) {
+          if (totalExperienceMsgRef.current) {
+            totalExperienceMsgRef.current.style.display = "block";
+            totalExperienceMsgRef.current.textContent = "Total Experience can't be blank";
+          }
           isValid = false;
         }
         if (isValid && !formData.currentLocation) {
+          if (currentLocationMsgRef.current) {
+            currentLocationMsgRef.current.style.display = "block";
+            currentLocationMsgRef.current.textContent = "Current Location can't be blank";
+          }
           isValid = false;
         }
         if (isValid && !formData.lookingForPharma) {
+          if (lookingForPharmaMsgRef.current) {
+            lookingForPharmaMsgRef.current.style.display = "block";
+            lookingForPharmaMsgRef.current.textContent = "Pharma Function can't be blank";
+          }
           isValid = false;
         }
         if (isValid && !formData.currentCompany) {
+          if (currentCompanyMsgRef.current) {
+            currentCompanyMsgRef.current.style.display = "block";
+            currentCompanyMsgRef.current.textContent = "Current Company can't be blank";
+          }
           isValid = false;
         }
         if (isValid && !formData.currentPosition) {
+          if (currentPositionMsgRef.current) {
+            currentPositionMsgRef.current.style.display = "block";
+            currentPositionMsgRef.current.textContent = "Current Position can't be blank";
+          }
+          isValid = false;
+        }
+        break;
+      case 3:
+        if (currentCTCMsgRef.current) {
+          currentCTCMsgRef.current.style.display = "none";
+        }
+        if (expectedCTCMsgRef.current) {
+          expectedCTCMsgRef.current.style.display = "none";
+        }
+        if (preferredLocationMsgRef.current) {
+          preferredLocationMsgRef.current.style.display = "none";
+        }
+        if (previousEmployerMsgRef.current) {
+          previousEmployerMsgRef.current.style.display = "none";
+        }
+        if (isValid && !formData.currentCTC) {
+          if (currentCTCMsgRef.current) {
+            currentCTCMsgRef.current.style.display = "block";
+            currentCTCMsgRef.current.textContent = "Qualification can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.expectedCTC) {
+          if (expectedCTCMsgRef.current) {
+            expectedCTCMsgRef.current.style.display = "block";
+            expectedCTCMsgRef.current.textContent = "Total Experience can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.preferredLocation) {
+          if (preferredLocationMsgRef.current) {
+            preferredLocationMsgRef.current.style.display = "block";
+            preferredLocationMsgRef.current.textContent = "Current Location can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.previousEmployer) {
+          if (previousEmployerMsgRef.current) {
+            previousEmployerMsgRef.current.style.display = "block";
+            previousEmployerMsgRef.current.textContent = "Pharma Function can't be blank";
+          }
           isValid = false;
         }
         break;
@@ -143,20 +237,24 @@ export const MultiStepForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const resp = await axios.post("/api/", {
-        params: formData,
-        operation: "RegistrationForm",
-      });
+    const isValid = validateFields(3);
 
-      if (resp.data.success) {
-        console.log(resp.data.message);
-        router.push("/");
-      } else {
-        console.log(resp.data.message);
+    if (isValid) {
+      try {
+        const resp = await axios.post("/api/", {
+          params: formData,
+          operation: "RegistrationForm",
+        });
+
+        if (resp.data.success) {
+          console.log(resp.data.message);
+          router.push("/");
+        } else {
+          console.log(resp.data.message);
+        }
+      } catch (error) {
+        console.error(error);
       }
-    } catch (error) {
-      console.error(error);
     }
   };
 
@@ -308,6 +406,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.qualification}
               onChange={handleChange}
+              errorMsgRef={qualificationMsgRef}
             />
             <Inputformfield
               label="Total Experience"
@@ -321,6 +420,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.totalExperience}
               onChange={handleChange}
+              errorMsgRef={totalExperienceMsgRef}
             />
             <Inputformfield
               label="Current Location"
@@ -334,6 +434,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.currentLocation}
               onChange={handleChange}
+              errorMsgRef={currentLocationMsgRef}
             />
             <Inputformfield
               label="Looking For Which Pharma Function"
@@ -347,6 +448,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.lookingForPharma}
               onChange={handleChange}
+              errorMsgRef={lookingForPharmaMsgRef}
             />
             <Inputformfield
               label="Current Company"
@@ -360,6 +462,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.currentCompany}
               onChange={handleChange}
+              errorMsgRef={currentCompanyMsgRef}
             />
             <Inputformfield
               label="Current Position"
@@ -373,6 +476,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.currentPosition}
               onChange={handleChange}
+              errorMsgRef={currentPositionMsgRef}
             />
           </div>
         )}
@@ -390,6 +494,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.currentCTC}
               onChange={handleChange}
+              errorMsgRef={currentCTCMsgRef}
             />
             <Inputformfield
               label="Expected CTC"
@@ -403,6 +508,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.expectedCTC}
               onChange={handleChange}
+              errorMsgRef={expectedCTCMsgRef}
             />
             <Inputformfield
               label="Preferred Location"
@@ -416,6 +522,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.preferredLocation}
               onChange={handleChange}
+              errorMsgRef={preferredLocationMsgRef}
             />
             <Inputformfield
               label="Previous Employer"
@@ -429,6 +536,7 @@ export const MultiStepForm = () => {
               variant="text-form-field"
               value={formData.previousEmployer}
               onChange={handleChange}
+              errorMsgRef={previousEmployerMsgRef}
             />
             <div className="col-span-2">
               <Inputformfield
