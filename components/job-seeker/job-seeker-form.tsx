@@ -47,6 +47,7 @@ export const MultiStepForm = () => {
   const expectedCTCMsgRef = useRef<HTMLInputElement>(null);
   const preferredLocationMsgRef = useRef<HTMLInputElement>(null);
   const previousEmployerMsgRef = useRef<HTMLInputElement>(null);
+  const cvMsgRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
@@ -56,6 +57,7 @@ export const MultiStepForm = () => {
 
   const validateFields = (step: number) => {
     let isValid = true;
+
     switch (step) {
       case 1:
         if (nameMsgRef.current) {
@@ -191,6 +193,9 @@ export const MultiStepForm = () => {
         if (previousEmployerMsgRef.current) {
           previousEmployerMsgRef.current.style.display = "none";
         }
+        if (cvMsgRef.current) {
+          cvMsgRef.current.style.display = "none";
+        }
         if (isValid && !formData.currentCTC) {
           if (currentCTCMsgRef.current) {
             currentCTCMsgRef.current.style.display = "block";
@@ -219,6 +224,13 @@ export const MultiStepForm = () => {
           }
           isValid = false;
         }
+        if (isValid && !formData.chooseFile) {
+          if (cvMsgRef.current) {
+            cvMsgRef.current.style.display = "block";
+            cvMsgRef.current.textContent = "CV can't be blank";
+          }
+          isValid = false;
+        }
         break;
     }
     return isValid;
@@ -233,6 +245,31 @@ export const MultiStepForm = () => {
 
   const prevStep = () => {
     setStep(step - 1);
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      setFormData({ ...formData, chooseFile: file.name });
+
+      const fileData = new FormData();
+      fileData.append("file", file);
+
+      try {
+        const response = await axios.post("/api/upload", {
+          method: "POST",
+          body: fileData,
+        });
+
+        if (response.data.success) {
+          console.log("File uploaded successfully");
+        } else {
+          console.error("Failed to upload file:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error uploading file:", error);
+      }
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -538,20 +575,22 @@ export const MultiStepForm = () => {
               onChange={handleChange}
               errorMsgRef={previousEmployerMsgRef}
             />
-            <div className="col-span-2">
-              <Inputformfield
-                label="Choose File"
-                name="chooseFile"
-                id="chooseFile"
-                isRequired={true}
+            <div className="formcontainer filecontainer">
+              <label
+                htmlFor="chooseFile"
+                className="text-base text-content1-charlestonGreen font-medium label-hidden after:content-['*'] after:text-danger"
+              >
+                Upload CV:
+              </label>
+              <input
                 type="file"
-                labePlacement="outside"
-                placeholder="Choose File"
-                radius="sm"
-                variant="text-form-field"
-                value={formData.chooseFile}
-                onChange={handleChange}
+                id="chooseFile"
+                name="chooseFile"
+                required
+                onChange={handleFileChange}
+                className="bg-content1-cultured data-[hover=true]:bg-default-200"
               />
+              <span ref={cvMsgRef} className="formerror"></span>
             </div>
           </div>
         )}
