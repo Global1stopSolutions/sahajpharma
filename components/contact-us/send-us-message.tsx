@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import axios from "axios";
 import { Subpagehero } from "../sub-page-hero/sub-page-hero";
 import { Containerwrapper } from "../container/container-wrapper";
 import { Card, CardBody } from "@nextui-org/react";
@@ -8,6 +10,40 @@ import { DEPARTMENT } from "@/constants";
 import { ButtonDefault } from "../button/button";
 
 export const Sendusmessage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    phoneNo: "",
+    emailID: "",
+    divison: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const resp = await axios.post("/api/", {
+        params: formData,
+        operation: "ContactForm",
+      });
+
+      if (resp.data.success) {
+        console.log(resp.data.message);
+      } else {
+        console.log(resp.data.message);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <Containerwrapper conatinerFull>
@@ -18,7 +54,7 @@ export const Sendusmessage = () => {
         />
         <Card className="w-[840px] mx-auto shadow-small px-unit-2xl py-unit-xl mt-[-150px]">
           <CardBody>
-            <form>
+            <form onSubmit={handleSubmit} noValidate>
               <div className="grid grid-cols-2 gap-x-unit-md gap-y-unit-xl">
                 <Inputformfield
                   label="Name"
@@ -27,6 +63,9 @@ export const Sendusmessage = () => {
                   placeholder="Name"
                   radius="sm"
                   variant="text-form-field"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
                 <Inputformfield
                   label="Company"
@@ -35,6 +74,9 @@ export const Sendusmessage = () => {
                   placeholder="Company"
                   radius="sm"
                   variant="text-form-field"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
                 />
                 <Inputformfield
                   label="Phone"
@@ -43,14 +85,21 @@ export const Sendusmessage = () => {
                   placeholder="Phone"
                   radius="sm"
                   variant="text-form-field"
+                  name="phoneNo"
+                  value={formData.phoneNo}
+                  onChange={handleChange}
                 />
                 <Inputformfield
                   label="Email"
                   type="email"
                   labePlacement="outside"
                   placeholder="Email"
+                  isRequired={true}
                   radius="sm"
                   variant="text-form-field"
+                  name="emailID"
+                  value={formData.emailID}
+                  onChange={handleChange}
                 />
                 <Selectformfield
                   radius="sm"
@@ -58,6 +107,9 @@ export const Sendusmessage = () => {
                   placeholder="Divison"
                   labePlacement="outside"
                   data={DEPARTMENT}
+                  name="divison"
+                  value={formData.divison}
+                  onChange={handleChange}
                 />
                 <Inputformfield
                   label="Subject"
@@ -66,6 +118,9 @@ export const Sendusmessage = () => {
                   placeholder="Subject"
                   radius="sm"
                   variant="text-form-field"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                 />
                 <div className="col-span-2">
                   <Inputformfield
@@ -75,9 +130,12 @@ export const Sendusmessage = () => {
                     placeholder="Message"
                     radius="sm"
                     variant="textarea"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                   />
                 </div>
-                <ButtonDefault variant="btn-primary" title="Send Message" />
+                <ButtonDefault variant="btn-primary" type="submit" title="Send Message" />
               </div>
             </form>
           </CardBody>

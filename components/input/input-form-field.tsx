@@ -55,8 +55,7 @@ export const Inputformfield = ({
             onChange={onChange}
             classNames={{
               base: `${isLabelHidden ? "data-[has-label=true]:mt-0" : ""}`,
-              inputWrapper:
-                "bg-content1-cultured data-[hover=true]:bg-default-200",
+              inputWrapper: "bg-content1-cultured data-[hover=true]:bg-default-200",
               label: `${
                 isLabelHidden
                   ? "hidden"
@@ -72,12 +71,14 @@ export const Inputformfield = ({
           <Textarea
             radius={radius}
             size={size}
+            name={name}
             label={label}
             placeholder={placeholder}
             labelPlacement={labePlacement}
+            value={value}
+            onChange={onChange}
             classNames={{
-              inputWrapper:
-                "bg-content1-cultured data-[hover=true]:bg-default-200",
+              inputWrapper: "bg-content1-cultured data-[hover=true]:bg-default-200",
               label: "text-base text-content1-charlestonGreen font-medium",
               input: "min-h-[100px]",
             }}

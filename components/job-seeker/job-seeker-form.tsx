@@ -168,7 +168,6 @@ export const MultiStepForm = () => {
               name="phoneNo"
               id="phoneNo"
               type="number"
-              isRequired={true}
               labePlacement="outside"
               placeholder="Phone No"
               radius="sm"
