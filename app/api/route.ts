@@ -1,16 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import path from "path"; // Import the 'path' module
-
-// const transporter = nodemailer.createTransport({
-//   host: "smtp.example.com",
-//   port: 587,
-//   secure: false,
-//   auth: {
-//     user: "your-email@example.com",
-//     pass: "your-password",
-//   },
-// });
+import path from "path";
 
 const transporter = nodemailer.createTransport({
   service: process.env.SMTP_SERVICE,
@@ -29,6 +19,8 @@ async function handlePostOperation(operation: string, params: any) {
   switch (operation) {
     case "RegistrationForm":
       return registrationForm(params);
+    case "ContactForm":
+      return contactForm(params);
     default:
       return NextResponse.json({
         success: false,
@@ -38,7 +30,8 @@ async function handlePostOperation(operation: string, params: any) {
 }
 
 async function registrationForm(params: any) {
-  const readableContent: string = getReadableContent(params);
+  let contentHeader = "Registration Details:\n\n";
+  const readableContent: string = getReadableContent(params, contentHeader);
 
   const attachment = {
     filename: "dummy.pdf",
@@ -66,8 +59,32 @@ async function registrationForm(params: any) {
   }
 }
 
-function getReadableContent(params: any): string {
-  let content = "Registration Details:\n\n";
+async function contactForm(params: any) {
+  let contentHeader = "Contact Details:\n\n";
+  const readableContent: string = getReadableContent(params, contentHeader);
+
+  const mailOptions = {
+    from: "Sahaj Pharma<cv@sahajpharma.com>",
+    to: "harshit3228@gmail.com",
+    subject: "New Contact",
+    text: readableContent,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    return NextResponse.json({
+      success: true,
+      message: "Operation completed. Email sent.",
+      data: params,
+    });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return NextResponse.json({ success: false, message: "Failed to send email." });
+  }
+}
+
+function getReadableContent(params: any, contentHeader: string): string {
+  let content = contentHeader;
 
   for (const key in params) {
     if (Object.prototype.hasOwnProperty.call(params, key)) {
