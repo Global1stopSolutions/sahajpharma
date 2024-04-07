@@ -35,7 +35,7 @@ async function registrationForm(params: any) {
 
   const attachment = {
     filename: "dummy.pdf",
-    path: path.join(process.cwd(), "public", "dummy.pdf"),
+    path: path.join(process.cwd(), "temp", "dummy.pdf"),
   };
 
   const mailOptions = {
