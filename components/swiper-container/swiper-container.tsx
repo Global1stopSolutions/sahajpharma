@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 interface SwiperGridProps {
@@ -7,6 +7,11 @@ interface SwiperGridProps {
   slidesPerView: number;
   className?: string;
   navigation: any;
+  spaceBetween?: number;
+  slidesOffsetAfter?: number;
+  pagination?: any;
+  breakpoints?: any;
+  autoplay?: any;
 }
 
 export const Swiperconatiner = ({
@@ -14,42 +19,23 @@ export const Swiperconatiner = ({
   slidesPerView,
   className,
   navigation,
+  pagination,
+  spaceBetween,
+  slidesOffsetAfter,
+  breakpoints,
+  autoplay,
 }: SwiperGridProps) => {
   return (
     <Swiper
       slidesPerView={slidesPerView}
-      spaceBetween={30}
-      slidesOffsetAfter={5}
-      pagination={{ clickable: true }}
+      spaceBetween={spaceBetween}
+      slidesOffsetAfter={slidesOffsetAfter}
+      pagination={pagination}
       className={className}
       navigation={navigation}
-      modules={[Navigation]}
-      breakpoints={{
-        // when window width is >= 320px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 24,
-        },
-        // when window width is >= 480px
-        480: {
-          slidesPerView: 2,
-          spaceBetween: 24,
-        },
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 6,
-          spaceBetween: 24,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 32,
-          slidesPerGroup: 1,
-        },
-        1336: {
-          slidesPerView: 3,
-          spaceBetween: 32,
-        },
-      }}
+      modules={[Navigation, Autoplay, Pagination]}
+      breakpoints={breakpoints}
+      autoplay={autoplay}
     >
       {children.map((child, index) => (
         <SwiperSlide key={index}>{child}</SwiperSlide>

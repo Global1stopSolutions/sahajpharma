@@ -8,7 +8,7 @@ export const Newsarticle = () => {
     <>
       <Containerwrapper>
         <HeadingDetail
-          titleWidth="w-[40%]"
+          titleWidth="sm:w-[40%] w-full"
           contentCenter
           headingTitle="RECENT NEWS FEED"
           title="Latest news & article from blog"

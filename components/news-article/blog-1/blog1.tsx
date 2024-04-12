@@ -5,14 +5,14 @@ import NextImage from "next/image";
 import { JobOPeningCard } from "@/components/cards/job-opening-cards";
 import { Inputformfield } from "@/components/input/input-form-field";
 import { LATEST_POST, ARTICLE_CATEGORIES } from "@/constants";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
+import { Swiperconatiner } from "@/components/swiper-container/swiper-container";
 
 export const Blog1 = () => {
+  const items = ["", "", "", ""];
   return (
     <>
       <div className="grid grid-cols-12 gap-unit-md">
-        <div className="col-span-9">
+        <div className="md:col-span-8 col-span-full">
           <Image
             radius="none"
             as={NextImage}
@@ -23,7 +23,7 @@ export const Blog1 = () => {
             loading="eager"
             quality={100}
           />
-          <Card className="border-none shadow-small rounded-none relative top-[-55px] z-10 w-[800px]">
+          <Card className="border-none shadow-small rounded-none relative top-[-55px] z-10 lg::w-[800px]">
             <CardBody>
               <div className="px-unit-lg pt-unit-md pb-unit-sm">
                 <div className="flex space-x-unit-lg">
@@ -103,21 +103,22 @@ export const Blog1 = () => {
               Current Opening
             </h5>
             <div>
-              <div className="grid grid-cols-2 gap-unit-md pr-unit-3xl">
+              <div className="grid grid-cols-2 gap-unit-md md:pr-unit-3xl">
                 <JobOPeningCard jobNumber={2} />
               </div>
             </div>
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-4 col-span-full mt-unit-2xl md:mt-unit-0">
           <Inputformfield
             label="Name"
             type="text"
             labePlacement="outside"
-            placeholder="Search here"
+            placeholder="Search Here"
             radius="sm"
             variant="text-form-field"
-            endContent={<div className="ic-search"></div>}
+            isInputSecondary={true}
+            endContent={<div className="ic-search text-white text-xl"></div>}
             isLabelHidden={true}
           />
           <div className="bg-content1-antiFlashWhite px-unit-sm py-unit-lg mt-unit-lg">
@@ -179,27 +180,25 @@ export const Blog1 = () => {
               ))}
             </div>
           </div>
-          <Swiper
-            navigation={false}
-            pagination={true}
-            mousewheel={true}
-            keyboard={true}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            className="mySwiper h-[300px]"
-          >
-            <SwiperSlide>
-              <JobOPeningCard jobNumber={1} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <JobOPeningCard jobNumber={1} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <JobOPeningCard jobNumber={1} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <JobOPeningCard jobNumber={1} />
-            </SwiperSlide>
-          </Swiper>
+          <div className="bg-content1-antiFlashWhite px-unit-sm py-unit-lg mt-unit-lg">
+            <label className="text-content1-charlestonGreen text-2xl font-normal pl-[15px]">
+              Current Opening
+            </label>
+            <Swiperconatiner
+              slidesPerView={1}
+              className="current-opening-blog"
+              navigation={false}
+              slidesOffsetAfter={1}
+              spaceBetween={15}
+              pagination={true}
+            >
+              {items.map((index) => (
+                <div key={index} className="flex flex-col space-y-unit-2xl">
+                  <JobOPeningCard jobNumber={1} />
+                </div>
+              ))}
+            </Swiperconatiner>
+          </div>
         </div>
       </div>
     </>

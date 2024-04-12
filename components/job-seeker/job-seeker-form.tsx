@@ -94,7 +94,7 @@ export const MultiStepForm = () => {
       </div>
       <form onSubmit={handleSubmit}>
         {step === 1 && (
-          <div className="grid grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
             <Inputformfield
               label="Name"
               name="name"
@@ -173,7 +173,7 @@ export const MultiStepForm = () => {
           </div>
         )}
         {step === 2 && (
-          <div className="grid grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
             <Inputformfield
               label="Qualification"
               name="qualification"
@@ -255,7 +255,7 @@ export const MultiStepForm = () => {
           </div>
         )}
         {step === 3 && (
-          <div className="grid grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-x-unit-md gap-y-unit-2xl">
             <Inputformfield
               label="Current CTC"
               name="currentCTC"

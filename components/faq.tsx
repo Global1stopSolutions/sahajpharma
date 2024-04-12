@@ -19,8 +19,8 @@ export const Faq = () => {
   return (
     <>
       <Containerwrapper>
-        <div className="flex space-x-unit-4xl">
-          <div className="basis-2/5">
+        <div className="sm:flex lg:space-x-unit-4xl">
+          <div className="basis-2/5 sm:w-[40%] sm:mr-unit-md md:mr-unit-0 w-full">
             <HeadingDetail
               titleWidth="w-full"
               headingTitle="COMMON QUESTIONS"
@@ -29,7 +29,7 @@ export const Faq = () => {
               description="Dui vel aliquam nullam nulla natoque iaculis viverra conubia letius. Primis non rhoncus dolor a urna finibus ultricies libero."
             />
           </div>
-          <div className="basis-full">
+          <div className="basis-full sm:mt-0 mt-unit-xl">
             <Accordion
               className="flex flex-col space-y-unit-lg"
               defaultExpandedKeys={["1"]}

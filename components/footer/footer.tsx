@@ -23,24 +23,25 @@ export const Footer = () => {
   return (
     <>
       <Containerwrapper
+        isMarginBottom={false}
         isBackground
-        className="bg-content1-raisinBlack mt-unit-6xl"
+        className="bg-content1-raisinBlack mt-unit-0 sm:mt-unit-5xl md:mt-unit-6xl"
       >
-        <div className="bg-white p-unit-xl rounded-lg mt-[-20%] shadow-medium">
+        <div className="bg-white p-unit-xl rounded-lg sm:mt-[-20%] mt-[-10%]  shadow-medium">
           <div className="carrer-job">
             <div className="overlay" />
             <div className="flex relative">
-              <div className="flex flex-col space-y-unit-md basis-8/12">
-                <label className="text-m-large font-bold">
+              <div className="flex flex-col space-y-unit-md  sm:basis-8/12">
+                <label className="heading-3">
                   Looking for a career change? Browse our job listings now!
                 </label>
-                <p className="text-content1-oldsilver text-small w-[60%]">
+                <p className="text-content1-oldsilver text-small sm:w-[60%]">
                   Sociosqu eros cras magna phasellus conubia semper netus lectus
                   lacinia mattis sed.
                 </p>
                 <ButtonDefault variant="btn-primary" title="Apply Now" />
               </div>
-              <div className="absolute right-0 top-[-144px]">
+              <div className="absolute hidden sm:block right-0 sm:top-[-144px] top-[-400px]">
                 <Image
                   as={NextImage}
                   src="/images/carrer-men.png"
@@ -53,7 +54,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-12 mt-unit-2xl">
+        <div className="sm:grid sm:grid-cols-12 flex flex-col mt-unit-2xl">
           <div className="flex flex-col space-y-unit-md col-span-4">
             <Image
               className="overflow-visible"
@@ -133,9 +134,9 @@ export const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-600 my-unit-lg" />
-        <div className="flex items-center justify-between ">
+        <div className="sm:flex items-center  justify-between pb-unit-md">
           <p className="text-white text-tiny">{`© ${year} Copyrights by Pkdesign. All Rights Reserved`}</p>
-          <div className="flex divide-x-[2px] divide-primary">
+          <div className="flex divide-x-[2px] divide-primary sm:mt-0 mt-unit-md">
             {FOOTER_LINK_DETAILS.map((footerLink, index) => (
               <div key={index} className="flex items-center px-unit-xs">
                 <Link

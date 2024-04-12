@@ -16,6 +16,7 @@ export interface InputformfieldProps {
   endContent?: any;
   className?: string;
   isLabelHidden?: boolean;
+  isInputSecondary?: boolean;
 
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -35,6 +36,7 @@ export const Inputformfield = ({
   endContent,
   className,
   isLabelHidden = false,
+  isInputSecondary = false,
   onChange,
 }: InputformfieldProps) => {
   return (
@@ -55,12 +57,21 @@ export const Inputformfield = ({
             onChange={onChange}
             classNames={{
               base: `${isLabelHidden ? "data-[has-label=true]:mt-0" : ""}`,
-              inputWrapper:
-                "bg-content1-cultured data-[hover=true]:bg-default-200",
+              inputWrapper: `text-white !cursor-text ${
+                isInputSecondary
+                  ? "rounded-none min-h-[75px] bg-secondary data-[hover=true]:bg-secondary group-data-[focus=true]:bg-secondary"
+                  : "bg-content1-cultured data-[hover=true]:bg-default-200"
+              }`,
+
               label: `${
                 isLabelHidden
                   ? "hidden"
                   : "text-base text-content1-charlestonGreen font-medium label-hidden"
+              } `,
+              input: `${
+                isInputSecondary
+                  ? "text-lg group-data-[has-value=true]:text-white placeholder:text-white"
+                  : ""
               }`,
             }}
             endContent={endContent}
