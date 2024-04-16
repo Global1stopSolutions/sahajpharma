@@ -253,22 +253,20 @@ export const MultiStepForm = () => {
       setFormData({ ...formData, chooseFile: file.name });
 
       const fileData = new FormData();
-      fileData.append("file", file);
+      fileData.append("file", file, file.name);
 
-      try {
-        const response = await axios.post("/api/upload", {
-          method: "POST",
-          body: fileData,
-        });
-
-        if (response.data.success) {
-          console.log("File uploaded successfully");
-        } else {
-          console.error("Failed to upload file:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error uploading file:", error);
-      }
+      // try {
+      //   const response = await axios.post("/api/user/upload", fileData, {
+      //     headers: {
+      //       "Content-Type": "multipart/form-data",
+      //     },
+      //   });
+      //   if (response.status == 200) {
+      //     console.log("File uploaded successfully");
+      //   }
+      // } catch (error) {
+      //   console.error("Error uploading file:", error);
+      // }
     }
   };
 
