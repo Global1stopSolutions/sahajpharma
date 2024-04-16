@@ -8,10 +8,8 @@ export const FeatureCards = () => {
     <>
       <div className="grid sm:grid-cols-3 gap-unit-xl sm:gap-unit-md relative lg:mb-[220px] md:[150px] lg:top-[110px] top-[70px]">
         {FEATURES_DETAIL.map((featureDetails, index) => (
-          <Card
-            key={index}
-            className="rounded-lg hover:bg-primary hover:text-white group realtive cursor-pointer"
-          >
+          <Card key={index} className="rounded-lg hover:bg-primary hover:text-white group realtive">
+            {/* Removed class: cursor-pointer */}
             <CardBody className="items-center space-y-unit-md py-unit-xl">
               <i
                 className={`text-primary text-5xl group-hover:text-white ${featureDetails.icon}`}

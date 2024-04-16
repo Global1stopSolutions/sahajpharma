@@ -1,7 +1,7 @@
 import React from "react";
 import Avatars from "./avtars";
 import { ButtonDefault } from "./button/button";
-import { Image } from "@nextui-org/react";
+import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { HeadingDetail } from "./heading-detail";
 import { Containerwrapper } from "./container/container-wrapper";
@@ -23,7 +23,9 @@ export const HeroSection = () => {
                 integer maecenas risus lobortis."
             />
             <Avatars />
-            <ButtonDefault variant="btn-primary" title="Discover More" />
+            <Link href="/job-seeker">
+              <ButtonDefault variant="btn-primary" title="Discover More" />
+            </Link>
           </div>
           <div className="w-full sm:w-3/6 flex items-center justify-center mt-unit-3xl sm:mt-unit-0">
             <div className="relative">

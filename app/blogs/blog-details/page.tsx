@@ -2,8 +2,8 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { Subpagehero } from "@/components/sub-page-hero/sub-page-hero";
-import { Containerwrapper } from "@/components/container/container-wrapper";
-import { Blog1 } from "@/components/news-article/blog-1/blog1";
+// import { Containerwrapper } from "@/components/container/container-wrapper";
+// import { Blog1 } from "@/components/news-article/blog-1/blog1";
 
 export default function BlogDetailPage({
   params,
@@ -19,9 +19,9 @@ export default function BlogDetailPage({
         title="News & Article"
         description="Archives"
       />
-      <Containerwrapper>
+      {/* <Containerwrapper>
         <Blog1 />
-      </Containerwrapper>
+      </Containerwrapper> */}
     </>
   );
 }

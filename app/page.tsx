@@ -2,18 +2,18 @@ import { AboutDetail } from "@/components/about";
 import { Clients } from "@/components/clients";
 import { Companybenfits } from "@/components/company-benifts";
 import { Expertcommunity } from "@/components/expert-community";
-import { Faq } from "@/components/faq";
+// import { Faq } from "@/components/faq";
 import { HeroSection } from "@/components/hero-section";
-import { JobOpening } from "@/components/job-opening";
-import { Newsarticle } from "@/components/news-article";
-import { Testimonial } from "@/components/testimonial";
+// import { JobOpening } from "@/components/job-opening";
+// import { Newsarticle } from "@/components/news-article";
+// import { Testimonial } from "@/components/testimonial";
 import { HeadingDetail } from "@/components/heading-detail";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <JobOpening />
+      {/* <JobOpening /> */}
       <AboutDetail>
         <HeadingDetail
           titleWidth="w-[100%]"
@@ -25,10 +25,10 @@ export default function Home() {
       </AboutDetail>
       <Clients />
       <Expertcommunity />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Companybenfits />
-      <Faq />
-      <Newsarticle />
+      {/* <Faq />
+      <Newsarticle /> */}
     </>
   );
 }

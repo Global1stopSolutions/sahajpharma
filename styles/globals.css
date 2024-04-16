@@ -1,3 +1,24 @@
 @import "tailwind/index.css";
 @import "local/index.css";
 @import "config/index.css";
+
+.formcontainer {
+  position: relative;
+}
+
+.formerror {
+  display: none;
+  color: red;
+  font-size: 12px;
+  font-style: italic;
+  position: absolute;
+  right: 0px;
+  bottom: -25px;
+}
+
+.filecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: -5px;
+}

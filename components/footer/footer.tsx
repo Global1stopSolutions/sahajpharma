@@ -3,12 +3,7 @@ import React from "react";
 import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "../button/button";
-import {
-  CATEGORIES,
-  COMPANY,
-  FOOTER_LINK_DETAILS,
-  SOCIAL_LINKS,
-} from "@/constants";
+import { CATEGORIES, COMPANY, FOOTER_LINK_DETAILS, SOCIAL_LINKS } from "@/constants";
 import { Inputformfield } from "../input/input-form-field";
 import { useState, useEffect } from "react";
 import { Containerwrapper } from "../container/container-wrapper";
@@ -17,7 +12,6 @@ export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    // Update the year when the component mounts
     setYear(new Date().getFullYear());
   }, []);
   return (
@@ -36,10 +30,11 @@ export const Footer = () => {
                   Looking for a career change? Browse our job listings now!
                 </label>
                 <p className="text-content1-oldsilver text-small sm:w-[60%]">
-                  Sociosqu eros cras magna phasellus conubia semper netus lectus
-                  lacinia mattis sed.
+                  Sociosqu eros cras magna phasellus conubia semper netus lectus lacinia mattis sed.
                 </p>
-                <ButtonDefault variant="btn-primary" title="Apply Now" />
+                <Link href="/job-seeker">
+                  <ButtonDefault variant="btn-primary" title="Apply Now" />
+                </Link>
               </div>
               <div className="absolute hidden sm:block right-0 sm:top-[-144px] top-[-400px]">
                 <Image
@@ -68,9 +63,9 @@ export const Footer = () => {
               quality={100}
             />
             <p className="text-white text-tiny">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem
-              necessitatibus voluptatum nulla id eius sit odio repudiandae
-              adipisci magnam dolore vero saepe dolor pariatur.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem necessitatibus
+              voluptatum nulla id eius sit odio repudiandae adipisci magnam dolore vero saepe dolor
+              pariatur.
             </p>
             <ul className="flex space-x-unit-md">
               {SOCIAL_LINKS.map((socialLinks, index) => (
@@ -82,7 +77,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col space-y-unit-md col-start-7 col-span-2 mt-unit-lg">
+          {/* <div className="flex flex-col space-y-unit-md col-start-7 col-span-2 mt-unit-lg">
             <label className="text-xl text-white font-semibold">
               Categories
             </label>
@@ -98,8 +93,9 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="flex flex-col space-y-unit-md col-start-9 col-span-2 mt-unit-lg">
+          </div> */}
+          <div className="flex flex-col space-y-unit-md col-start-11 col-span-2 mt-unit-lg">
+            {/* (NOTE: Temp change. Replace later this class: flex flex-col space-y-unit-md col-start-9 col-span-2 mt-unit-lg */}
             <label className="text-xl text-white font-semibold">Company</label>
             <ul>
               {COMPANY.map((company, index) => (
@@ -114,7 +110,7 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col col-span-2 mt-unit-lg">
+          {/* <div className="flex flex-col col-span-2 mt-unit-lg">
             <label className="text-xl text-white font-semibold">
               Newsletter
             </label>
@@ -131,11 +127,11 @@ export const Footer = () => {
               />
               <ButtonDefault variant="btn-primary" title="Sign Up" full />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-gray-600 my-unit-lg" />
         <div className="sm:flex items-center  justify-between pb-unit-md">
-          <p className="text-white text-tiny">{`© ${year} Copyrights by Pkdesign. All Rights Reserved`}</p>
+          <p className="text-white text-tiny">{`© ${year} Copyrights by Globalsolutions. All Rights Reserved`}</p>
           <div className="flex divide-x-[2px] divide-primary sm:mt-0 mt-unit-md">
             {FOOTER_LINK_DETAILS.map((footerLink, index) => (
               <div key={index} className="flex items-center px-unit-xs">

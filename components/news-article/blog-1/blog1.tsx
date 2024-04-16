@@ -45,49 +45,40 @@ export const Blog1 = () => {
                     Guide to HR Adviser and Clients Lessening
                   </h5>
                   <p className="text-content1-oldsilver font-light text-medium">
-                    Lorem ipsum is simply free dolor sit amet, consect pisicing
-                    elit. Lorem ipsum dolor sit amet, cibo mundi ea duo, v im
-                    exerci phaedrum. There are many variations of passages of
-                    Lorem Ipsum available, but the majority have alteration in
-                    some injected or words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem
-                    Ipsum, you need to be sure there isn't anything embarrang
-                    hidden in the middle of text. All the Lorem Ipsum generators
-                    on the Internet tend to repeat predefined chunks as
-                    necessary, making this the first true generator on the
-                    Internet. It uses a dictionary of over 200 Latin words,
-                    combined with a handful of model sentence structures, to
-                    generate Lorem Ipsum which looks reasonable.
+                    Lorem ipsum is simply free dolor sit amet, consect pisicing elit. Lorem ipsum
+                    dolor sit amet, cibo mundi ea duo, v im exerci phaedrum. There are many
+                    variations of passages of Lorem Ipsum available, but the majority have
+                    alteration in some injected or words which don't look even slightly believable.
+                    If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                    isn't anything embarrang hidden in the middle of text. All the Lorem Ipsum
+                    generators on the Internet tend to repeat predefined chunks as necessary, making
+                    this the first true generator on the Internet. It uses a dictionary of over 200
+                    Latin words, combined with a handful of model sentence structures, to generate
+                    Lorem Ipsum which looks reasonable.
                   </p>
                   <p className="text-content1-oldsilver font-light text-medium">
-                    Lorem ipsum is simply free dolor sit amet, consect pisicing
-                    elit. Lorem ipsum dolor sit amet, cibo mundi ea duo, v im
-                    exerci phaedrum. There are many variations of passages of
-                    Lorem Ipsum available, but the majority have alteration in
-                    some injected or words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem
-                    Ipsum, you need to be sure there isn't anything embarrang
-                    hidden in the middle of text. All the Lorem Ipsum generators
-                    on the Internet tend to repeat predefined chunks as
-                    necessary, making this the first true generator on the
-                    Internet. It uses a dictionary of over 200 Latin words,
-                    combined with a handful of model sentence structures, to
-                    generate Lorem Ipsum which looks reasonable.
+                    Lorem ipsum is simply free dolor sit amet, consect pisicing elit. Lorem ipsum
+                    dolor sit amet, cibo mundi ea duo, v im exerci phaedrum. There are many
+                    variations of passages of Lorem Ipsum available, but the majority have
+                    alteration in some injected or words which don't look even slightly believable.
+                    If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                    isn't anything embarrang hidden in the middle of text. All the Lorem Ipsum
+                    generators on the Internet tend to repeat predefined chunks as necessary, making
+                    this the first true generator on the Internet. It uses a dictionary of over 200
+                    Latin words, combined with a handful of model sentence structures, to generate
+                    Lorem Ipsum which looks reasonable.
                   </p>
                   <p className="text-content1-oldsilver font-light text-medium">
-                    Lorem ipsum is simply free dolor sit amet, consect pisicing
-                    elit. Lorem ipsum dolor sit amet, cibo mundi ea duo, v im
-                    exerci phaedrum. There are many variations of passages of
-                    Lorem Ipsum available, but the majority have alteration in
-                    some injected or words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem
-                    Ipsum, you need to be sure there isn't anything embarrang
-                    hidden in the middle of text. All the Lorem Ipsum generators
-                    on the Internet tend to repeat predefined chunks as
-                    necessary, making this the first true generator on the
-                    Internet. It uses a dictionary of over 200 Latin words,
-                    combined with a handful of model sentence structures, to
-                    generate Lorem Ipsum which looks reasonable.
+                    Lorem ipsum is simply free dolor sit amet, consect pisicing elit. Lorem ipsum
+                    dolor sit amet, cibo mundi ea duo, v im exerci phaedrum. There are many
+                    variations of passages of Lorem Ipsum available, but the majority have
+                    alteration in some injected or words which don't look even slightly believable.
+                    If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                    isn't anything embarrang hidden in the middle of text. All the Lorem Ipsum
+                    generators on the Internet tend to repeat predefined chunks as necessary, making
+                    this the first true generator on the Internet. It uses a dictionary of over 200
+                    Latin words, combined with a handful of model sentence structures, to generate
+                    Lorem Ipsum which looks reasonable.
                   </p>
                 </div>
                 <div className="bg-primary flex flex-col justify-center items-center absolute top-0 z-10 right-0 text-white font-base p-unit-sm leading-4">
