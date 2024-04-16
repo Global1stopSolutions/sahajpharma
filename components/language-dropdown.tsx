@@ -1,18 +1,10 @@
 "use client";
 
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/react";
+import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
 import React from "react";
 
 export const LangDropdown = () => {
-  const [selectedKeys, setSelectedKeys] = React.useState<Set<string>>(
-    new Set(["English"])
-  );
+  const [selectedKeys, setSelectedKeys] = React.useState<Set<string>>(new Set(["English"]));
 
   const selectedValue = React.useMemo(
     () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
@@ -34,7 +26,7 @@ export const LangDropdown = () => {
         disallowEmptySelection
         selectionMode="single"
         selectedKeys={selectedKeys}
-        onSelectionChange={setSelectedKeys}
+        // onSelectionChange={setSelectedKeys}
         aria-label="Static Actions"
         itemClasses={{
           base: [
