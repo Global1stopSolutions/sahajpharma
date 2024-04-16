@@ -6,6 +6,7 @@ import { Containerwrapper } from "./container/container-wrapper";
 import { Link } from "@nextui-org/link";
 
 export const Expertcommunity = () => {
+  const istextWhite = true;
   const [numberData, setNumberData] = useState(JOB_DETAIl_SUMMARY);
 
   useEffect(() => {
@@ -27,8 +28,8 @@ export const Expertcommunity = () => {
   return (
     <>
       <Containerwrapper className="bg-expert-community-wrapper py-[50px]" isBackground>
-        <div className="h-full flex flex-col space-y-unit-lg w-[60%] mt-unit-2xl">
-          <h5 className="text-secondary-foreground text-x-large font-bold ">
+        <div className="h-full flex flex-col space-y-unit-lg lg:w-[60%] w-full mt-unit-2xl">
+          <h5 className={`heading-2 ${istextWhite ? "text-white" : ""}`}>
             join our community of talented proffessionals by applying for a job today!
           </h5>
           <p className="text-secondary-foreground">
@@ -41,12 +42,12 @@ export const Expertcommunity = () => {
           </Link>
         </div>
         <div>
-          <div className="bg-white px-unit-lg py-unit-xl rounded-lg max-w-[70%] mx-auto shadow-small relative top-[50px]">
-            <div className="grid grid-cols-4 divide-x divide-gray-300">
+          <div className="bg-white sm:px-unit-lg p-unit-sm py-unit-xl rounded-lg lg:max-w-[70%] w-full mx-auto shadow-small relative top-[55px] lg:top-[50px]">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-unit-md sm:divide-x sm:divide-gray-300">
               {numberData.map((data, index) => (
                 <div className="flex flex-col items-center" key={index}>
-                  <b className="text-primary text-m-large">{data.current}+</b>
-                  <p className="text-eerieBlack text-small">{data.description}</p>
+                  <b className="text-primary heading-3">{data.current}+</b>
+                  <p className="text-eerieBlack text-small text-center">{data.description}</p>
                 </div>
               ))}
             </div>

@@ -31,6 +31,23 @@ module.exports = {
         DEFAULT: "1rem",
       },
     },
+    screens: {
+      xs: "475px",
+
+      sm: "768px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "1024px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1280px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1367px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+    },
   },
   darkMode: "class",
   plugins: [
@@ -43,16 +60,17 @@ module.exports = {
           tiny: "0.75rem", // 12px text-tiny
           small: "0.875rem", // 14px text-small
           medium: "1rem", //  16px text-medium
-          mlarge: "2.25rem", // 32px text-m-large
           large: "1.125rem", //18px text-large
-          xlarge: "2.875rem", // 48px text-x-large
+          "heading-3": "var(--font-heading-3)", // 32px text-m-large
+          "heading-4": "var(--font-heading-4)", // 48px text-x-large
         },
         lineHeight: {
           tiny: "1rem", // text-tiny
           small: "1.25rem", // text-small
           medium: "1.5rem", // text-medium
-          large: "1.75rem", // text-large
-          xlarge: "55px",
+          large: "55px", // text-large
+          "heading-3": "var(--lh-heading-3)",
+          "heading-4": "var(--lh-heading-4)",
         },
         radius: {
           small: "4px", // rounded-small

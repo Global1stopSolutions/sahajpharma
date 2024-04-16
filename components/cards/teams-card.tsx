@@ -6,7 +6,7 @@ import { OUR_TEAMS } from "@/constants";
 export const Teamscard = () => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-unit-md ">
+      <div className="grid sm:grid-cols-3 gap-unit-xl sm:gap-unit-md">
         {OUR_TEAMS.map((imgItem, index) => (
           <div key={index}>
             <div className="flex flex-col hover:opacity-100 group/item">

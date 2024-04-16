@@ -12,7 +12,7 @@ export const Newsarticlelist = ({
 }) => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-unit-md mt-unit-3xl">
+      <div className="grid sm:grid-cols-3 gap-unit-md lg:mt-unit-3xl mt-unit-lg">
         {ARTICLE_LIST.slice(0, articleNumber).map((article, index) => (
           <div key={index}>
             <div className="relative">
@@ -33,8 +33,8 @@ export const Newsarticlelist = ({
               </div>
             </div>
             <div className="relative top-[-10%] z-10 mx-auto w-[90%]">
-              <Card className="border-none shadow-small rounded-md px-unit-lg pt-unit-md pb-unit-sm">
-                <CardBody>
+              <Card className="border-none shadow-small rounded-md lg:px-unit-lg px-unit-sm pt-unit-md pb-unit-sm">
+                <CardBody className="p-1 lg:p-3">
                   <div className="flex flex-col space-y-unit-xs">
                     <div className="flex space-x-unit-lg">
                       <div className="flex items-center space-x-unit-xs">
@@ -56,7 +56,7 @@ export const Newsarticlelist = ({
                     </div>
                     <Link
                       href="/"
-                      className="text-content1-charlestonGreen font-bold text-2xl hover:text-primary"
+                      className="text-content1-charlestonGreen font-bold text-base lg:text-2xl hover:text-primary"
                     >
                       {article.label}
                     </Link>

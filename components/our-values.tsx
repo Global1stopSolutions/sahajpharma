@@ -8,7 +8,7 @@ export const Ourvalue = () => {
   return (
     <>
       <Containerwrapper>
-        <div className="flex space-x-unit-md">
+        <div className="sm:flex space-y-unit-lg sm:space-y-unit-0 sm:space-x-unit-md">
           <div className="basis-6/12">
             <HeadingDetail
               titleWidth="w-[100%]"
@@ -18,7 +18,7 @@ export const Ourvalue = () => {
               description="Donec class lacinia vel hac laoreet amet et dictumst suspendisse. Maximus tortor pede egestas quis facilisis est. Neque dis fringilla augue mollis viverra enim conubia pulvinar."
             />
           </div>
-          <div className="basis-6/12 flex space-x-unit-lg">
+          <div className="basis-6/12 sm:flex space-y-unit-lg sm:space-y-unit-0  sm:space-x-unit-lg">
             {OUR_VALUES.map((item, index) => (
               <Card key={index} className="rounded-lg realtive">
                 <CardBody className="items-center space-y-unit-md py-unit-xl">

@@ -27,8 +27,12 @@ export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
   return (
     <>
       <Containerwrapper>
-        <div className="flex">
-          <div className={`basis-3/6 relative ${imgageRight ? "order-2 flex justify-center" : ""}`}>
+        <div className="sm:flex gap-unit-2xl">
+          <div
+            className={`sm:basis-3/6 w-full relative ${
+              imgageRight ? "order-2 flex justify-center" : ""
+            }`}
+          >
             <Image
               as={NextImage}
               src="/images/about-us.png"
@@ -38,14 +42,14 @@ export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
               loading="eager"
               quality={100}
             />
-            <div className={`year-experience ${imgageRight ? "right-0" : "right-[50px]"}`}>
+            <div className={`year-experience ${imgageRight ? "right-0" : "right-0"}`}>
               <span className="text-primary font-semibold text-4xl">{yearofExperience}+</span>
               <p className="uppercase font-semibold text-base text-content1-quartz">
                 Year of Experience
               </p>
             </div>
           </div>
-          <div className="basis-3/6">
+          <div className="sm:basis-3/6 w-full mt-unit-xl sm:mt-unit-0">
             {children}
             <div className="mt-unit-lg">
               <Link href="/job-seeker">

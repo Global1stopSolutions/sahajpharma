@@ -15,7 +15,7 @@ export default function jobseekerPage() {
       />
 
       <Containerwrapper>
-        <Card className="rounded-lg realtive overflow-visible shadow-small w-[1024px] mx-auto mb-unit-4xl">
+        <Card className="rounded-lg realtive overflow-visible shadow-small md:w-[1024px] w-full mx-auto mb-unit-4xl">
           <CardBody className="items-start space-y-unit-md py-unit-xl overflow-visible">
             <MultiStepForm />
           </CardBody>

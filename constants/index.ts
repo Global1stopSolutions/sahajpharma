@@ -551,3 +551,66 @@ export const ARTICLE_CATEGORIES = [
     title: "Advisers",
   },
 ];
+
+export const TESTIMONIAL = [
+  {
+    discription:
+      "Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.",
+    clientAvatar: "https://i.pravatar.cc/150?u=a04258a2462d826712d",
+    clientName: "Siobhán McFeeney",
+    clientDescription: "Client of notech company",
+    rating: [
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+    ],
+  },
+  {
+    discription:
+      "Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.",
+    clientAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    clientName: "Selena Avas",
+    clientDescription: "Client of node tech",
+    rating: [
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+    ],
+  },
+  {
+    discription:
+      "Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.Proin tempus pede eros nullam vivamus convallis nunc. Sollicitudin cubilia porta convallis ad donec semper aliquam aptent dignissim nunc.",
+    clientAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+    clientName: "Rena jories",
+    clientDescription: "Client of Afroject",
+    rating: [
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+      {
+        icon: "ic-star",
+      },
+    ],
+  },
+];

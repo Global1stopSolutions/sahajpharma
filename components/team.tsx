@@ -11,7 +11,7 @@ export const Teams = () => {
       <Containerwrapper>
         <div className="mt-unit-4xl flex flex-col space-y-unit-3xl">
           <HeadingDetail
-            titleWidth="w-[60%]"
+            titleWidth="sm:w-[60%] w-full"
             contentCenter
             headingTitle="Our Team"
             title="Awesome people behind us."

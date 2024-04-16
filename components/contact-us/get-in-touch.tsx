@@ -6,7 +6,7 @@ export const Getintouch = () => {
   return (
     <>
       <Containerwrapper>
-        <div className="flex">
+        <div className="md:flex">
           <div className="basis-6/12 bg-content1-cultured p-unit-xl">
             <HeadingDetail
               titleWidth="w-[100%]"
@@ -49,8 +49,8 @@ export const Getintouch = () => {
           <div className="basis-6/12">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.548650195115!2d73.16142207347977!3d22.295080943088077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc61e71660c75%3A0xf8087fd44f877fb6!2sSahaj%20Pharma%20For%20HR%20Solutions!5e0!3m2!1sen!2snz!4v1710919111489!5m2!1sen!2snz"
-              width="600"
-              height="900"
+              width="100%"
+              height="100%"
               style={{ border: "0" }}
               loading="lazy"
             ></iframe>

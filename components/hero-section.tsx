@@ -11,10 +11,10 @@ export const HeroSection = () => {
   return (
     <>
       <Containerwrapper className="bg-content1-cultured" isBackground>
-        <div className="flex items-center pt-[30px]">
-          <div className="flex flex-col w-3/6 space-y-unit-lg">
+        <div className="items-center pt-[30px] sm:flex ">
+          <div className="flex flex-col w-full sm:w-3/6 space-y-unit-lg">
             <HeadingDetail
-              titleWidth="w-[80%]"
+              titleWidth="lg:w-[80%] w-full"
               headingTitle="lets start your carrers here!"
               title="Looking for a career  change? Browse our job
                 listings now!"
@@ -27,16 +27,21 @@ export const HeroSection = () => {
               <ButtonDefault variant="btn-primary" title="Discover More" />
             </Link>
           </div>
-          <div className="w-3/6 flex items-center justify-center">
-            <Image
-              as={NextImage}
-              src="/images/hero.png"
-              alt="hero"
-              height="460"
-              width="460"
-              loading="eager"
-              quality={100}
-            />
+          <div className="w-full sm:w-3/6 flex items-center justify-center mt-unit-3xl sm:mt-unit-0">
+            <div className="relative">
+              <Image
+                className="overflow-visible"
+                as={NextImage}
+                src="/images/hero.png"
+                alt="hero"
+                width={0}
+                height={0}
+                sizes="(min-width: 330px) 100%"
+                style={{ width: "auto", height: "auto", objectFit: "cover" }}
+                loading="eager"
+                quality={100}
+              />
+            </div>
           </div>
         </div>
 

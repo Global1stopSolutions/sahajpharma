@@ -87,10 +87,10 @@ export const Sendusmessage = () => {
           title="Send us a message"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
         />
-        <Card className="w-[840px] mx-auto shadow-small px-unit-2xl py-unit-xl mt-[-150px]">
+        <Card className="md:w-[840px] md:mx-auto mx-unit-lg shadow-small md:px-unit-2xl px-unit-lg  py-unit-xl md:mt-[-150px] mt-unit-lg">
           <CardBody>
             <form onSubmit={handleSubmit} noValidate>
-              <div className="grid grid-cols-2 gap-x-unit-md gap-y-unit-xl">
+              <div className="flex flex-col gap-unit-xl md:grid md:grid-cols-2 md:gap-x-unit-md md:gap-y-unit-xl">
                 <Inputformfield
                   label="Name"
                   type="text"
