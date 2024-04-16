@@ -20,7 +20,7 @@ import NextImage from "next/image";
 import { Topnavbar } from "./top-navbar";
 import { usePathname } from "next/navigation";
 import { Inputformfield } from "../input/input-form-field";
-import { LangDropdown } from "../language-dropdown";
+// import { LangDropdown } from "../language-dropdown";
 
 export const Navbar = () => {
   //mobile side bar active //
@@ -58,10 +58,7 @@ export const Navbar = () => {
       >
         <NavbarContent justify="start">
           <NavbarBrand as="li" className="gap-3 max-w-fit">
-            <NextLink
-              className="flex justify-start items-center gap-1"
-              href="/"
-            >
+            <NextLink className="flex justify-start items-center gap-1" href="/">
               <div className="sm:h-[92px] sm:w-[92px] h-[70px] w-[70px] relative">
                 <Image
                   className="overflow-visible "
@@ -82,18 +79,12 @@ export const Navbar = () => {
               <NavbarItem key={item.href}>
                 <NextLink
                   className={
-                    currentPath === item.href
-                      ? "navigation-active-link"
-                      : "navigation-link"
+                    currentPath === item.href ? "navigation-active-link" : "navigation-link"
                   }
                   href={item.href}
                 >
                   {item.label}
-                  <span
-                    className={
-                      currentPath === item.href ? "active-link-border" : ""
-                    }
-                  />
+                  <span className={currentPath === item.href ? "active-link-border" : ""} />
                 </NextLink>
               </NavbarItem>
             ))}
@@ -143,35 +134,24 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarMenu className={isActive ? "navbar-menu-trs" : "w-0"}>
-          <div
-            className="flex flex-col"
-            style={{ height: "calc(100vh - 14%)" }}
-          >
+          <div className="flex flex-col" style={{ height: "calc(100vh - 14%)" }}>
             <div className="mx-4 mt-2 flex flex-col gap-2 grow">
               {siteConfig.navMenuItems.map((item, index) => (
                 <NavbarMenuItem key={`${item}-${index}`}>
                   <NextLink
                     className={
-                      currentPath === item.href
-                        ? "navigation-active-link"
-                        : "navigation-link"
+                      currentPath === item.href ? "navigation-active-link" : "navigation-link"
                     }
                     href={item.href}
                   >
                     {item.label}
-                    <span
-                      className={
-                        currentPath === item.href ? "active-link-border" : ""
-                      }
-                    />
+                    <span className={currentPath === item.href ? "active-link-border" : ""} />
                   </NextLink>
                 </NavbarMenuItem>
               ))}
             </div>
             <div className="pb-unit-md border-t-1 border-gray-400 h-[100px]">
-              <div className="sm:block">
-                <LangDropdown />
-              </div>
+              <div className="sm:block">{/* <LangDropdown /> */}</div>
             </div>
           </div>
         </NavbarMenu>
