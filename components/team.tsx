@@ -14,8 +14,8 @@ export const Teams = () => {
             titleWidth="sm:w-[60%] w-full"
             contentCenter
             headingTitle="Our Team"
-            title="Awesome people behind us."
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+            title="Awesome people behind us"
+            description="Our experienced consultants understand the industry and have profound knowledge about the job market, are dedicated to provide innovative solutions for job seekers and organizations."
           />
           <Teamscard />
           <Clients />

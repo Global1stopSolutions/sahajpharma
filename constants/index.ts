@@ -406,13 +406,13 @@ export const OUR_VALUES = [
     icon: "ic-vision",
     label: "Our Vision",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      "Consistently be the most trusted recruitment partner in pharmaceutical and chemical sectors, known for excellence and integrity. We aim to lead by adapting to evolving needs",
   },
   {
     icon: "ic-mission",
-    label: "Our mission",
+    label: "Our Mission",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      "Creating meaningful and lasting connections by leveraging our industry knowledge and network. Helping the right talent thrive and organizations, build a strong profile",
   },
 ];
 
