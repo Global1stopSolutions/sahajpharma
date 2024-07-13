@@ -12,10 +12,9 @@ export const Ourvalue = () => {
           <div className="basis-6/12">
             <HeadingDetail
               titleWidth="w-[100%]"
-              headingTitle="Our values"
-              title="Recruitment company
-          work with effectiveness."
-              description="Donec class lacinia vel hac laoreet amet et dictumst suspendisse. Maximus tortor pede egestas quis facilisis est. Neque dis fringilla augue mollis viverra enim conubia pulvinar."
+              headingTitle="Our founder"
+              title=""
+              description="R S Pandey has over 22 years of experience working in pharmaceutical and chemical industries, served as Plant HR Head at Cadila Pharmaceuticals Ltd, Lupin Laboratories Ltd, Macleods Pharmaceuticals Ltd, Alken Laboratories Limited, Micro Lab, and more. He founded Sahaj Pharma for HR Solution in 2016 and is commited towards connecting top talent with leading organizations while upholding the highest standards of service and integrity."
             />
           </div>
           <div className="basis-6/12 sm:flex space-y-unit-lg sm:space-y-unit-0  sm:space-x-unit-lg">

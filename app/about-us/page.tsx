@@ -19,10 +19,8 @@ export default function aboutUsPage() {
         <HeadingDetail
           titleWidth="w-[100%]"
           headingTitle="Who we are"
-          title="Here’s to growth 
-              and happiness in every person’s 
-              career journey"
-          description="Donec class lacinia vel hac laoreet amet et dictumst suspendisse. Maximus tortor pede egestas quis facilisis est. Neque dis fringilla augue mollis viverra enim conubia pulvinar."
+          title="Sahaj Pharma for HR Solutions"
+          description="Our deep industry knowledge and extensive network of professionals from both domestic and international markets enable us to provide tailored recruitment solutions. We understand the unique challenges and opportunities within the pharmaceutical and chemical sectors."
         />
       </AboutDetail>
       <Ourvalue />
