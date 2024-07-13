@@ -34,18 +34,18 @@ export const SOCIAL_LINKS = [
 export const FEATURES_DETAIL = [
   {
     icon: "ic-talent-agency",
-    label: "Talent Agency",
+    label: "Talent Acquisition",
     description: "We connect right talent with the perfect stage",
   },
   {
     icon: "ic-portal-job",
     label: "Job Portal",
-    description: "Find open positions quickly with powerful search options",
+    description: "Find open positions with powerful search options",
   },
   {
     icon: "ic-carrer-coaching",
-    label: "Career Coaching",
-    description: "Build a solid profile by adding the skills in demand",
+    label: "Consultation Services",
+    description: "Ongoing guidance to stay ahead of industry trends",
   },
 ];
 

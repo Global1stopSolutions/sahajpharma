@@ -36,8 +36,8 @@ export const Expertcommunity = () => {
             Discover boundless career possibilities within our dynamic community of accomplished
             professionals. Engage with like-minded individuals, unlock exclusive job opportunities,
             and propel your career forward starting today. Join us in cultivating a network of
-            excellence, where talent meets opportunity, and make your mark in the world of work with
-            confidence and purpose.
+            excellence, where talent meets opportunity, and make your mark with confidence and
+            purpose.
           </p>
           <Link href="/job-seeker">
             <ButtonDefault title="Discover More" variant="btn-primary-inverse" />

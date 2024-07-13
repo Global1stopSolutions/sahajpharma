@@ -15,7 +15,7 @@ export const Companybenfits = () => {
               titleWidth="w-full"
               headingTitle="BENEFIT"
               title="Adding People Strategy in Every Company"
-              description="Making talent a priority fuels success. Implementing strategies to identify the right talent, empower by providing suitable pathways, and nurturing skill development."
+              description="Making talent a priority fuels success. We at Sahaj, implement strategies to identify the right talent, empower by providing suitable pathways, and nurturing skill development."
             />
             <div className="flex flex-col space-y-unit-2xl">
               {COMPANY_BENIFTS.map((benfit, index) => (
