@@ -16,11 +16,8 @@ export const HeroSection = () => {
             <HeadingDetail
               titleWidth="lg:w-[80%] w-full"
               headingTitle="lets start your carrers here!"
-              title="Looking for a career  change? Browse our job
-                listings now!"
-              description="Mus vehicula dignissim quis si lorem libero cras pulvinar orci
-                dapibus. Sagittis quisque orci pretium donec elit platea porta
-                integer maecenas risus lobortis."
+              title="Looking for a job switch? Browse our job listings now!"
+              description="Unlock your potential by getting the dream job. With endless opportunities listed on our website, find the perfect fit and shape your future."
             />
             <Avatars />
             <Link href="/job-seeker">

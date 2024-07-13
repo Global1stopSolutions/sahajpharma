@@ -14,9 +14,8 @@ export const Companybenfits = () => {
             <HeadingDetail
               titleWidth="w-full"
               headingTitle="BENEFIT"
-              title="Adding People Strategy in
-                Every Company"
-              description="Dui vel aliquam nullam nulla natoque iaculis viverra conubia letius. Primis non rhoncus dolor a urna finibus ultricies libero."
+              title="Adding People Strategy in Every Company"
+              description="Making talent a priority fuels success. Implementing strategies to identify the right talent, empower by providing suitable pathways, and nurturing skill development."
             />
             <div className="flex flex-col space-y-unit-2xl">
               {COMPANY_BENIFTS.map((benfit, index) => (

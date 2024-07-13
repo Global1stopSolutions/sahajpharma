@@ -34,18 +34,18 @@ export const SOCIAL_LINKS = [
 export const FEATURES_DETAIL = [
   {
     icon: "ic-talent-agency",
-    label: "Talents Agency",
-    description: "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
+    label: "Talent Agency",
+    description: "We connect right talent with the perfect stage",
   },
   {
     icon: "ic-portal-job",
-    label: "Portal Job",
-    description: "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
+    label: "Job Portal",
+    description: "Find open positions quickly with powerful search options",
   },
   {
     icon: "ic-carrer-coaching",
-    label: "Carrer Coaching",
-    description: "Facilisi etiam consectetur mi bibendum posue ultricies cubilibdonei",
+    label: "Career Coaching",
+    description: "Build a solid profile by adding the skills in demand",
   },
 ];
 
@@ -222,18 +222,20 @@ export const JOB_DETAIl_SUMMARY = [
 export const COMPANY_BENIFTS = [
   {
     icon: "ic-employee",
-    label: "By real employees",
-    description: "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
+    label: "Evaluated by real employees",
+    description:
+      "Expert evaluators identify the honed skills and match profiles with suitable opportunities",
   },
   {
     icon: "ic-comprehensive-rating",
     label: "Comprehensive ratings",
-    description: "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
+    description: "Read reviews from current and past employees to learn more about company culture",
   },
   {
     icon: "ic-free-coaching",
     label: "Free Coaching",
-    description: "Lorem sollicitudin orci lacinia inceptos feugiat quam et lectus sodales",
+    description:
+      "Skill gap should not stop you from securing the dream job, upskill to surpass the competition",
   },
 ];
 
