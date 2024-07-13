@@ -17,7 +17,7 @@ export const Clients = () => {
               titleWidth="w-full"
               headingTitle="FEATURED"
               title="Our Clients"
-              description="Dui vel aliquam nullam nulla natoque iaculis viverra conubia letius. Primis non rhoncus dolor a urna finibus ultricies libero."
+              description="Building winning teams in pharmaceuticals and chemicals. See how Sahaj Pharma is helping companies find top talent."
             />
           </div>
           <div className="mt-unit-2xl sm:m-unit-0">

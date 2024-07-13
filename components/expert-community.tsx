@@ -30,12 +30,14 @@ export const Expertcommunity = () => {
       <Containerwrapper className="bg-expert-community-wrapper py-[50px]" isBackground>
         <div className="h-full flex flex-col space-y-unit-lg lg:w-[60%] w-full mt-unit-2xl">
           <h5 className={`heading-2 ${istextWhite ? "text-white" : ""}`}>
-            join our community of talented proffessionals by applying for a job today!
+            Join our community of talented professionals and start applying for a job today!
           </h5>
           <p className="text-secondary-foreground">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur unde
-            vero, natus provident rerum. Natus suscipit voluptates obcaecati libero, laudantium sit
-            quisquam asperiores consequatur provident eos aperiam quibusdam.
+            Discover boundless career possibilities within our dynamic community of accomplished
+            professionals. Engage with like-minded individuals, unlock exclusive job opportunities,
+            and propel your career forward starting today. Join us in cultivating a network of
+            excellence, where talent meets opportunity, and make your mark in the world of work with
+            confidence and purpose.
           </p>
           <Link href="/job-seeker">
             <ButtonDefault title="Discover More" variant="btn-primary-inverse" />

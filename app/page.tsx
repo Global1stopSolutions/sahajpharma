@@ -18,9 +18,8 @@ export default function Home() {
         <HeadingDetail
           titleWidth="w-[100%]"
           headingTitle="About"
-          title="Bridge for industrial and
-                corporate development."
-          description="Established with the aim of helping organizations improve their performance by providing right resource at the right time. We Sahaj Pharma believe in becoming one of the trusted business partners by delivering quality services. Sahaj Pharma is a premier talent search & business outsourcing firm. We aim at fulfilling the demands of the future. With expertise in the area of talent search, recruitment & training, we provide qualityacross Pharmaceutical and Chemical industries."
+          title="Bridge for industrial and corporate development."
+          description="At Sahaj Pharma for HR Solution, we specialize in connecting top-tier talent with leading organizations in the pharmaceutical and chemical industries, both domestically and internationally. Our comprehensive recruitment services are designed to meet the unique needs of job seekers and employers, ensuring successful placements that drive innovation and growth."
         />
       </AboutDetail>
       <Clients />
