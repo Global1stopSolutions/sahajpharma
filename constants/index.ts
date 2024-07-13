@@ -233,9 +233,9 @@ export const COMPANY_BENIFTS = [
   },
   {
     icon: "ic-free-coaching",
-    label: "Free Coaching",
+    label: "Global recruitment",
     description:
-      "Skill gap should not stop you from securing the dream job, upskill to surpass the competition",
+      "Visa sponsorship, relocation assistance, and cross-cultural communication, to ensure a seamless hiring process for both clients and candidates",
   },
 ];
 
