@@ -45,7 +45,7 @@ export const FEATURES_DETAIL = [
   {
     icon: "ic-carrer-coaching",
     label: "Consultation Services",
-    description: "Build a solid profile by adding the skills in demand",
+    description: "Ongoing guidance to stay ahead of industry trends",
   },
 ];
 
