@@ -11,7 +11,7 @@ export default function jobseekerPage() {
       <Subpagehero
         herobg="job-seeker-bg"
         title="Job Seeker"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        description="Submit your details with a profile and we will help you find suitable opportunities"
       />
 
       <Containerwrapper>

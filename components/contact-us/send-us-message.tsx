@@ -85,7 +85,7 @@ export const Sendusmessage = () => {
         <Subpagehero
           herobg="send-us-message-bg"
           title="Send us a message"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+          description="Reach out to us for any query or special requirements, our team will provide suitable solutions"
         />
         <Card className="md:w-[840px] md:mx-auto mx-unit-lg shadow-small md:px-unit-2xl px-unit-lg  py-unit-xl md:mt-[-150px] mt-unit-lg">
           <CardBody>

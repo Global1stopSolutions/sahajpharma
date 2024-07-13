@@ -11,9 +11,8 @@ export const Getintouch = () => {
             <HeadingDetail
               titleWidth="w-[100%]"
               headingTitle="Get in touch"
-              title="Don't hesitate to contact
-      us for more information."
-              description="Donec class lacinia vel hac laoreet amet et dictumst suspendisse. Maximus tortor pede egestas quis facilisis est. Neque dis fringilla augue mollis viverra enim conubia pulvinar."
+              title="Don't hesitate to contact us for more information."
+              description=""
             />
             <div className="border-t-1 border-gray-300 my-unit-xl" />
 
