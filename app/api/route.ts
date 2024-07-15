@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import fs from "fs/promises";
 import path from "path";
 
 const transporter = nodemailer.createTransport({
@@ -32,10 +33,11 @@ async function handlePostOperation(operation: string, params: any) {
 async function registrationForm(params: any) {
   let contentHeader = "Registration Details:\n\n";
   const readableContent: string = getReadableContent(params, contentHeader);
+  const filePath = path.join(process.cwd(), "uploads", params.chooseFile);
 
   const attachment = {
-    filename: "dummy.pdf",
-    path: path.join(process.cwd(), "temp", "dummy.pdf"),
+    filename: params.chooseFile,
+    path: filePath,
   };
 
   const mailOptions = {
@@ -48,6 +50,7 @@ async function registrationForm(params: any) {
 
   try {
     await transporter.sendMail(mailOptions);
+    await fs.unlink(filePath);
     return NextResponse.json({
       success: true,
       message: "Operation completed. Email sent.",
