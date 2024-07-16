@@ -60,181 +60,181 @@ export const MultiStepForm = () => {
   const validateFields = (step: number) => {
     let isValid = true;
 
-    // switch (step) {
-    //   case 1:
-    //     if (nameMsgRef.current) {
-    //       nameMsgRef.current.style.display = "none";
-    //     }
-    //     if (emailMsgRef.current) {
-    //       emailMsgRef.current.style.display = "none";
-    //     }
-    //     if (dobMsgRef.current) {
-    //       dobMsgRef.current.style.display = "none";
-    //     }
-    //     if (genderMsgRef.current) {
-    //       genderMsgRef.current.style.display = "none";
-    //     }
-    //     if (mobileMsgRef.current) {
-    //       mobileMsgRef.current.style.display = "none";
-    //     }
-    //     if (isValid && !formData.name) {
-    //       if (nameMsgRef.current) {
-    //         nameMsgRef.current.style.display = "block";
-    //         nameMsgRef.current.textContent = "Name can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.emailId) {
-    //       if (emailMsgRef.current) {
-    //         emailMsgRef.current.style.display = "block";
-    //         emailMsgRef.current.textContent = "Email Id can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !isValidEmail(formData.emailId)) {
-    //       if (emailMsgRef.current) {
-    //         emailMsgRef.current.style.display = "block";
-    //         emailMsgRef.current.textContent = "Please enter a valid email id";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.dateOfBirth) {
-    //       if (dobMsgRef.current) {
-    //         dobMsgRef.current.style.display = "block";
-    //         dobMsgRef.current.textContent = "Date Of Birth can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.gender) {
-    //       if (genderMsgRef.current) {
-    //         genderMsgRef.current.style.display = "block";
-    //         genderMsgRef.current.textContent = "Gender can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.mobileNo) {
-    //       if (mobileMsgRef.current) {
-    //         mobileMsgRef.current.style.display = "block";
-    //         mobileMsgRef.current.textContent = "Mobile No can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     break;
-    //   case 2:
-    //     if (qualificationMsgRef.current) {
-    //       qualificationMsgRef.current.style.display = "none";
-    //     }
-    //     if (totalExperienceMsgRef.current) {
-    //       totalExperienceMsgRef.current.style.display = "none";
-    //     }
-    //     if (currentLocationMsgRef.current) {
-    //       currentLocationMsgRef.current.style.display = "none";
-    //     }
-    //     if (lookingForPharmaMsgRef.current) {
-    //       lookingForPharmaMsgRef.current.style.display = "none";
-    //     }
-    //     if (currentCompanyMsgRef.current) {
-    //       currentCompanyMsgRef.current.style.display = "none";
-    //     }
-    //     if (currentPositionMsgRef.current) {
-    //       currentPositionMsgRef.current.style.display = "none";
-    //     }
-    //     if (isValid && !formData.qualification) {
-    //       if (qualificationMsgRef.current) {
-    //         qualificationMsgRef.current.style.display = "block";
-    //         qualificationMsgRef.current.textContent = "Qualification can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.totalExperience) {
-    //       if (totalExperienceMsgRef.current) {
-    //         totalExperienceMsgRef.current.style.display = "block";
-    //         totalExperienceMsgRef.current.textContent = "Total Experience can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.currentLocation) {
-    //       if (currentLocationMsgRef.current) {
-    //         currentLocationMsgRef.current.style.display = "block";
-    //         currentLocationMsgRef.current.textContent = "Current Location can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.lookingForPharma) {
-    //       if (lookingForPharmaMsgRef.current) {
-    //         lookingForPharmaMsgRef.current.style.display = "block";
-    //         lookingForPharmaMsgRef.current.textContent = "Pharma Function can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.currentCompany) {
-    //       if (currentCompanyMsgRef.current) {
-    //         currentCompanyMsgRef.current.style.display = "block";
-    //         currentCompanyMsgRef.current.textContent = "Current Company can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.currentPosition) {
-    //       if (currentPositionMsgRef.current) {
-    //         currentPositionMsgRef.current.style.display = "block";
-    //         currentPositionMsgRef.current.textContent = "Current Position can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     break;
-    //   case 3:
-    //     if (currentCTCMsgRef.current) {
-    //       currentCTCMsgRef.current.style.display = "none";
-    //     }
-    //     if (expectedCTCMsgRef.current) {
-    //       expectedCTCMsgRef.current.style.display = "none";
-    //     }
-    //     if (preferredLocationMsgRef.current) {
-    //       preferredLocationMsgRef.current.style.display = "none";
-    //     }
-    //     if (previousEmployerMsgRef.current) {
-    //       previousEmployerMsgRef.current.style.display = "none";
-    //     }
-    //     if (cvMsgRef.current) {
-    //       cvMsgRef.current.style.display = "none";
-    //     }
-    //     if (isValid && !formData.currentCTC) {
-    //       if (currentCTCMsgRef.current) {
-    //         currentCTCMsgRef.current.style.display = "block";
-    //         currentCTCMsgRef.current.textContent = "Qualification can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.expectedCTC) {
-    //       if (expectedCTCMsgRef.current) {
-    //         expectedCTCMsgRef.current.style.display = "block";
-    //         expectedCTCMsgRef.current.textContent = "Total Experience can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.preferredLocation) {
-    //       if (preferredLocationMsgRef.current) {
-    //         preferredLocationMsgRef.current.style.display = "block";
-    //         preferredLocationMsgRef.current.textContent = "Current Location can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.previousEmployer) {
-    //       if (previousEmployerMsgRef.current) {
-    //         previousEmployerMsgRef.current.style.display = "block";
-    //         previousEmployerMsgRef.current.textContent = "Pharma Function can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     if (isValid && !formData.chooseFile) {
-    //       if (cvMsgRef.current) {
-    //         cvMsgRef.current.style.display = "block";
-    //         cvMsgRef.current.textContent = "CV can't be blank";
-    //       }
-    //       isValid = false;
-    //     }
-    //     break;
-    // }
+    switch (step) {
+      case 1:
+        if (nameMsgRef.current) {
+          nameMsgRef.current.style.display = "none";
+        }
+        if (emailMsgRef.current) {
+          emailMsgRef.current.style.display = "none";
+        }
+        if (dobMsgRef.current) {
+          dobMsgRef.current.style.display = "none";
+        }
+        if (genderMsgRef.current) {
+          genderMsgRef.current.style.display = "none";
+        }
+        if (mobileMsgRef.current) {
+          mobileMsgRef.current.style.display = "none";
+        }
+        if (isValid && !formData.name) {
+          if (nameMsgRef.current) {
+            nameMsgRef.current.style.display = "block";
+            nameMsgRef.current.textContent = "Name can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.emailId) {
+          if (emailMsgRef.current) {
+            emailMsgRef.current.style.display = "block";
+            emailMsgRef.current.textContent = "Email Id can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !isValidEmail(formData.emailId)) {
+          if (emailMsgRef.current) {
+            emailMsgRef.current.style.display = "block";
+            emailMsgRef.current.textContent = "Please enter a valid email id";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.dateOfBirth) {
+          if (dobMsgRef.current) {
+            dobMsgRef.current.style.display = "block";
+            dobMsgRef.current.textContent = "Date Of Birth can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.gender) {
+          if (genderMsgRef.current) {
+            genderMsgRef.current.style.display = "block";
+            genderMsgRef.current.textContent = "Gender can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.mobileNo) {
+          if (mobileMsgRef.current) {
+            mobileMsgRef.current.style.display = "block";
+            mobileMsgRef.current.textContent = "Mobile No can't be blank";
+          }
+          isValid = false;
+        }
+        break;
+      case 2:
+        if (qualificationMsgRef.current) {
+          qualificationMsgRef.current.style.display = "none";
+        }
+        if (totalExperienceMsgRef.current) {
+          totalExperienceMsgRef.current.style.display = "none";
+        }
+        if (currentLocationMsgRef.current) {
+          currentLocationMsgRef.current.style.display = "none";
+        }
+        if (lookingForPharmaMsgRef.current) {
+          lookingForPharmaMsgRef.current.style.display = "none";
+        }
+        if (currentCompanyMsgRef.current) {
+          currentCompanyMsgRef.current.style.display = "none";
+        }
+        if (currentPositionMsgRef.current) {
+          currentPositionMsgRef.current.style.display = "none";
+        }
+        if (isValid && !formData.qualification) {
+          if (qualificationMsgRef.current) {
+            qualificationMsgRef.current.style.display = "block";
+            qualificationMsgRef.current.textContent = "Qualification can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.totalExperience) {
+          if (totalExperienceMsgRef.current) {
+            totalExperienceMsgRef.current.style.display = "block";
+            totalExperienceMsgRef.current.textContent = "Total Experience can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.currentLocation) {
+          if (currentLocationMsgRef.current) {
+            currentLocationMsgRef.current.style.display = "block";
+            currentLocationMsgRef.current.textContent = "Current Location can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.lookingForPharma) {
+          if (lookingForPharmaMsgRef.current) {
+            lookingForPharmaMsgRef.current.style.display = "block";
+            lookingForPharmaMsgRef.current.textContent = "Pharma Function can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.currentCompany) {
+          if (currentCompanyMsgRef.current) {
+            currentCompanyMsgRef.current.style.display = "block";
+            currentCompanyMsgRef.current.textContent = "Current Company can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.currentPosition) {
+          if (currentPositionMsgRef.current) {
+            currentPositionMsgRef.current.style.display = "block";
+            currentPositionMsgRef.current.textContent = "Current Position can't be blank";
+          }
+          isValid = false;
+        }
+        break;
+      case 3:
+        if (currentCTCMsgRef.current) {
+          currentCTCMsgRef.current.style.display = "none";
+        }
+        if (expectedCTCMsgRef.current) {
+          expectedCTCMsgRef.current.style.display = "none";
+        }
+        if (preferredLocationMsgRef.current) {
+          preferredLocationMsgRef.current.style.display = "none";
+        }
+        if (previousEmployerMsgRef.current) {
+          previousEmployerMsgRef.current.style.display = "none";
+        }
+        if (cvMsgRef.current) {
+          cvMsgRef.current.style.display = "none";
+        }
+        if (isValid && !formData.currentCTC) {
+          if (currentCTCMsgRef.current) {
+            currentCTCMsgRef.current.style.display = "block";
+            currentCTCMsgRef.current.textContent = "Qualification can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.expectedCTC) {
+          if (expectedCTCMsgRef.current) {
+            expectedCTCMsgRef.current.style.display = "block";
+            expectedCTCMsgRef.current.textContent = "Total Experience can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.preferredLocation) {
+          if (preferredLocationMsgRef.current) {
+            preferredLocationMsgRef.current.style.display = "block";
+            preferredLocationMsgRef.current.textContent = "Current Location can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.previousEmployer) {
+          if (previousEmployerMsgRef.current) {
+            previousEmployerMsgRef.current.style.display = "block";
+            previousEmployerMsgRef.current.textContent = "Pharma Function can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.chooseFile) {
+          if (cvMsgRef.current) {
+            cvMsgRef.current.style.display = "block";
+            cvMsgRef.current.textContent = "CV can't be blank";
+          }
+          isValid = false;
+        }
+        break;
+    }
     return isValid;
   };
 
