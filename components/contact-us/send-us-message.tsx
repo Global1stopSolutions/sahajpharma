@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { Subpagehero } from "../sub-page-hero/sub-page-hero";
@@ -22,6 +22,7 @@ export const Sendusmessage = () => {
     subject: "",
     message: "",
   });
+  const [isSubmited, setIsSubmited] = useState(false);
   const emailMsgRef = useRef<HTMLInputElement>(null);
   const nameMsgRef = useRef<HTMLInputElement>(null);
 
@@ -69,10 +70,9 @@ export const Sendusmessage = () => {
       });
 
       if (resp.data.success) {
-        console.log(resp.data.message);
-        router.push("/");
+        setIsSubmited(true);
       } else {
-        console.log(resp.data.message);
+        console.error(resp.data.message);
       }
     } catch (error) {
       console.error(error);
@@ -89,94 +89,98 @@ export const Sendusmessage = () => {
         />
         <Card className="md:w-[840px] md:mx-auto mx-unit-lg shadow-small md:px-unit-2xl px-unit-lg  py-unit-xl md:mt-[-150px] mt-unit-lg">
           <CardBody>
-            <form onSubmit={handleSubmit} noValidate>
-              <div className="flex flex-col gap-unit-xl md:grid md:grid-cols-2 md:gap-x-unit-md md:gap-y-unit-xl">
-                <Inputformfield
-                  label="Name"
-                  type="text"
-                  labePlacement="outside"
-                  placeholder="Name"
-                  isRequired={true}
-                  radius="sm"
-                  variant="text-form-field"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  errorMsgRef={nameMsgRef}
-                />
-                <Inputformfield
-                  label="Company"
-                  type="text"
-                  labePlacement="outside"
-                  placeholder="Company"
-                  radius="sm"
-                  variant="text-form-field"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                />
-                <Inputformfield
-                  label="Phone"
-                  type="number"
-                  labePlacement="outside"
-                  placeholder="Phone"
-                  radius="sm"
-                  variant="text-form-field"
-                  name="phoneNo"
-                  value={formData.phoneNo}
-                  onChange={handleChange}
-                />
-                <Inputformfield
-                  label="Email"
-                  type="email"
-                  id="email"
-                  labePlacement="outside"
-                  placeholder="Email"
-                  isRequired={true}
-                  radius="sm"
-                  variant="text-form-field"
-                  name="emailId"
-                  value={formData.emailId}
-                  onChange={handleChange}
-                  errorMsgRef={emailMsgRef}
-                />
-                <Selectformfield
-                  radius="sm"
-                  label="Divison"
-                  placeholder="Divison"
-                  labePlacement="outside"
-                  data={DEPARTMENT}
-                  name="divison"
-                  value={formData.divison}
-                  onChange={handleChange}
-                />
-                <Inputformfield
-                  label="Subject"
-                  type="text"
-                  labePlacement="outside"
-                  placeholder="Subject"
-                  radius="sm"
-                  variant="text-form-field"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-                <div className="col-span-2">
+            {isSubmited ? (
+              <div>Thank you</div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="flex flex-col gap-unit-xl md:grid md:grid-cols-2 md:gap-x-unit-md md:gap-y-unit-xl">
                   <Inputformfield
-                    label="Message"
+                    label="Name"
                     type="text"
                     labePlacement="outside"
-                    placeholder="Message"
+                    placeholder="Name"
+                    isRequired={true}
                     radius="sm"
-                    variant="textarea"
-                    name="message"
-                    value={formData.message}
+                    variant="text-form-field"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    errorMsgRef={nameMsgRef}
+                  />
+                  <Inputformfield
+                    label="Company"
+                    type="text"
+                    labePlacement="outside"
+                    placeholder="Company"
+                    radius="sm"
+                    variant="text-form-field"
+                    name="company"
+                    value={formData.company}
                     onChange={handleChange}
                   />
+                  <Inputformfield
+                    label="Phone"
+                    type="number"
+                    labePlacement="outside"
+                    placeholder="Phone"
+                    radius="sm"
+                    variant="text-form-field"
+                    name="phoneNo"
+                    value={formData.phoneNo}
+                    onChange={handleChange}
+                  />
+                  <Inputformfield
+                    label="Email"
+                    type="email"
+                    id="email"
+                    labePlacement="outside"
+                    placeholder="Email"
+                    isRequired={true}
+                    radius="sm"
+                    variant="text-form-field"
+                    name="emailId"
+                    value={formData.emailId}
+                    onChange={handleChange}
+                    errorMsgRef={emailMsgRef}
+                  />
+                  <Selectformfield
+                    radius="sm"
+                    label="Divison"
+                    placeholder="Divison"
+                    labePlacement="outside"
+                    data={DEPARTMENT}
+                    name="divison"
+                    value={formData.divison}
+                    onChange={handleChange}
+                  />
+                  <Inputformfield
+                    label="Subject"
+                    type="text"
+                    labePlacement="outside"
+                    placeholder="Subject"
+                    radius="sm"
+                    variant="text-form-field"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
+                  <div className="col-span-2">
+                    <Inputformfield
+                      label="Message"
+                      type="text"
+                      labePlacement="outside"
+                      placeholder="Message"
+                      radius="sm"
+                      variant="textarea"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <ButtonDefault variant="btn-primary" type="submit" title="Send Message" />
                 </div>
-                <ButtonDefault variant="btn-primary" type="submit" title="Send Message" />
-              </div>
-            </form>
+              </form>
+            )}
           </CardBody>
         </Card>
       </Containerwrapper>
