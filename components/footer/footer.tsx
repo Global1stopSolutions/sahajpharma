@@ -3,53 +3,66 @@ import React from "react";
 import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "../button/button";
-import { CATEGORIES, COMPANY, FOOTER_LINK_DETAILS, SOCIAL_LINKS } from "@/constants";
+import {
+  CATEGORIES,
+  COMPANY,
+  FOOTER_LINK_DETAILS,
+  SOCIAL_LINKS,
+} from "@/constants";
 import { Inputformfield } from "../input/input-form-field";
 import { useState, useEffect } from "react";
 import { Containerwrapper } from "../container/container-wrapper";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
+  const params = usePathname();
+  const showCarrerCard = params === "/privacy-policy" ? false : true;
 
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
+
   return (
     <>
       <Containerwrapper
         isMarginBottom={false}
         isBackground
-        className="bg-content1-raisinBlack mt-unit-0 sm:mt-unit-5xl md:mt-unit-6xl"
+        className={`bg-content1-raisinBlack mt-unit-0  ${
+          showCarrerCard ? "sm:mt-unit-5xl md:mt-unit-6xl" : "sm:mt-unit-3xl"
+        }`}
       >
-        <div className="bg-white p-unit-xl rounded-lg sm:mt-[-20%] mt-[-10%]  shadow-medium">
-          <div className="carrer-job">
-            <div className="overlay" />
-            <div className="flex relative">
-              <div className="flex flex-col space-y-unit-md  sm:basis-8/12">
-                <label className="heading-3">
-                  Looking for a career change? Browse our job listings now!
-                </label>
-                <p className="text-content1-oldsilver text-small sm:w-[60%]">
-                  Secure a job that you love and aligns with your career vision. Find the recent
-                  openings in your field.
-                </p>
-                <Link href="/job-seeker">
-                  <ButtonDefault variant="btn-primary" title="Apply Now" />
-                </Link>
-              </div>
-              <div className="absolute hidden sm:block right-0 sm:top-[-144px] top-[-400px]">
-                <Image
-                  as={NextImage}
-                  src="/images/carrer-men.png"
-                  alt="carrer-men"
-                  height={370}
-                  width={370}
-                  className=""
-                />
+        {showCarrerCard && (
+          <div className="bg-white p-unit-xl rounded-lg sm:mt-[-20%] mt-[-10%] shadow-medium">
+            <div className="carrer-job">
+              <div className="overlay" />
+              <div className="flex relative">
+                <div className="flex flex-col space-y-unit-md  sm:basis-8/12">
+                  <label className="heading-3">
+                    Looking for a career change? Browse our job listings now!
+                  </label>
+                  <p className="text-content1-oldsilver text-small sm:w-[60%]">
+                    Secure a job that you love and aligns with your career
+                    vision. Find the recent openings in your field.
+                  </p>
+                  <Link href="/job-seeker">
+                    <ButtonDefault variant="btn-primary" title="Apply Now" />
+                  </Link>
+                </div>
+                <div className="absolute hidden sm:block right-0 sm:top-[-144px] top-[-400px]">
+                  <Image
+                    as={NextImage}
+                    src="/images/carrer-men.png"
+                    alt="carrer-men"
+                    height={370}
+                    width={370}
+                    className=""
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
         <div className="sm:grid sm:grid-cols-12 flex flex-col mt-unit-2xl">
           <div className="flex flex-col space-y-unit-md col-span-4">
             <Image
@@ -64,9 +77,9 @@ export const Footer = () => {
               quality={100}
             />
             <p className="text-white text-tiny">
-              Our platform keeps sending endless opportunities your way in a simplified and
-              efficient manner. We provide the job openings that interests you along with ways to
-              strengthen your profile.
+              Our platform keeps sending endless opportunities your way in a
+              simplified and efficient manner. We provide the job openings that
+              interests you along with ways to strengthen your profile.
             </p>
             <ul className="flex space-x-unit-md">
               {SOCIAL_LINKS.map((socialLinks, index) => (
