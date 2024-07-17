@@ -13,7 +13,7 @@
   --lh-heading-4: 55px;
   --font-heading-3: 32px;
   --lh-heading-3: 45px;
-  --custom-header-height: 125px;
+  --custom-header-height: 75px;
 }
 @layer base {
   .font-Inter {
@@ -41,10 +41,10 @@
 }
 
 .navigation-link {
-  @apply text-content1-oldsilver hover:text-primary transition duration-700;
+  @apply text-content1-oldsilver hover:text-primary transition duration-700 text-sm;
 }
 .navigation-active-link {
-  @apply text-primary transition duration-700 relative;
+  @apply text-primary transition duration-700 relative text-sm;
   .active-link-border {
     @apply h-[2px] w-[20px] bg-primary absolute bottom-[-10px] left-0;
   }
@@ -195,4 +195,19 @@
 
 .navbar-menu-trs {
   @apply !h-[100%] bottom-[unset] ease-in-out duration-700 top-[165px] absolute w-full border-t-1 z-[100] border-gray-400;
+}
+
+.policy-nav {
+  ul {
+    @apply p-0 list-none;
+    li {
+      @apply mb-3;
+    }
+  }
+  a {
+    @apply text-content1-charlestonGreen block no-underline;
+    &.active {
+      @apply text-primary font-bold;
+    }
+  }
 }
