@@ -1,15 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { policySections } from "@/constants";
+import { cookieSections } from "@/constants";
 import { Subpagehero } from "@/components/sub-page-hero/sub-page-hero";
 
-const PrivacyPolicy = () => {
+const CookiePolicy = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
-      policySections.forEach((section) => {
+      cookieSections.forEach((section) => {
         const sectionElement = document.getElementById(section.id);
         if (sectionElement) {
           const sectionTop = sectionElement.offsetTop;
@@ -46,14 +46,14 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Subpagehero
-        herobg="privacy-policy-bg"
-        title="Privacy Policy"
+        herobg="cookie-policy-bg"
+        title="Cookie Policy"
         description=""
       />
 
       <div className="privacy-policy-container grid grid-cols-12 ">
         <div className="policy-content col-span-9 px-10">
-          {policySections.map((items) => (
+          {cookieSections.map((items) => (
             <div key={items.id} id={items.id} className="mb-10">
               <h2 className="font-bold text-lg">{items.title}</h2>
               <ul>
@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
           <nav className="policy-nav sticky top-[100px] p-3">
             <h3 className="font-bold text-lg mb-5">On this Page</h3>
             <ul>
-              {policySections.map((section) => (
+              {cookieSections.map((section) => (
                 <li key={section.id}>
                   <a
                     href={`#${section.id}`}
@@ -94,4 +94,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default CookiePolicy;

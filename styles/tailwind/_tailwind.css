@@ -121,6 +121,12 @@
   &.job-seeker-bg {
     @apply bg-job-seeker-hero;
   }
+  &.privacy-policy-bg {
+    @apply bg-privacy-policy;
+  }
+  &.cookie-policy-bg {
+    @apply bg-cookie-policy;
+  }
 }
 .input-label-hidden {
   &.data-[has-label="true"] {

@@ -397,7 +397,7 @@ export const FOOTER_LINK_DETAILS = [
     label: "Privacy Policy",
   },
   {
-    link: "/",
+    link: "/cookie-policy",
     label: "Cookie policy",
   },
 ];
@@ -620,7 +620,7 @@ export const TESTIMONIAL = [
 
 export const policySections = [
   {
-    id: "section-1",
+    id: "section-0",
     title: "Introduction",
     description: [
       {
@@ -630,7 +630,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-2",
+    id: "section-1",
     title: "1. Information Sahaj Collects",
     description: [
       {
@@ -654,7 +654,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-3",
+    id: "section-2",
     title: "2. Our Use of Your Information",
     description: [
       {
@@ -672,7 +672,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-4",
+    id: "section-3",
     title: "3. Our Disclosure of Your Information",
     description: [
       {
@@ -703,7 +703,7 @@ export const policySections = [
   },
 
   {
-    id: "section-5",
+    id: "section-4",
     title: "4. Your Rights",
     description: [
       {
@@ -740,7 +740,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-6",
+    id: "section-5",
     title: "5. International Transfers",
     description: [
       {
@@ -750,7 +750,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-7",
+    id: "section-6",
     title: "6. Security & Safeguarding Measures",
     description: [
       {
@@ -764,7 +764,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-8",
+    id: "section-7",
     title: "7. How Long We Retain Your Data",
     description: [
       {
@@ -778,7 +778,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-9",
+    id: "section-8",
     title: "8. Children",
     description: [
       {
@@ -788,7 +788,7 @@ export const policySections = [
     ],
   },
   {
-    id: "section-10",
+    id: "section-9",
     title: "9.Links to Other Web Sites",
     description: [
       {
@@ -798,12 +798,111 @@ export const policySections = [
     ],
   },
   {
-    id: "section-11",
+    id: "section-10",
     title: "10. Cookies",
     description: [
       {
         paragraph:
           "A ‘cookie’ is a small text file sent from a website and stored on the user’s computer by the user’s web browser. Upon visiting a site that uses cookies, a cookie is downloaded onto your computer or mobile device. The next time you visit that site, your device will remember useful information such as preferences, visited pages or logging in options.",
+      },
+    ],
+  },
+];
+
+export const cookieSections = [
+  {
+    id: "section-0",
+    title: "Your current state: I'm OK With All Cookies",
+    description: [
+      {
+        paragraph:
+          "Please select I'm OK With All Cookies or Use Necessary Cookies Only to dismiss the cookie popup notice and save your preferences.",
+      },
+    ],
+  },
+  {
+    id: "section-1",
+    title: "What are cookies?",
+    description: [
+      {
+        paragraph:
+          "They are small text files placed on a user's device when they visit a website. They serve various purposes, including enhancing user experience, remembering preferences, and enabling certain website features.",
+      },
+    ],
+  },
+  {
+    id: "section-2",
+    title: "Why does Sahaj use cookies?",
+    description: [
+      {
+        paragraph:
+          "We use various tracking technologies and cookies to understand audience interests and behavior, improve our services and your experience, and present you with relevant marketing content and advertising.",
+      },
+    ],
+  },
+  {
+    id: "section-3",
+    title: "What cookies does Sahaj use? Our cookies",
+    description: [
+      {
+        paragraph:
+          "We use cookies to enhance the user journey while navigating our website. For example, we use session cookies during registration form filling to avoid re-entering your details when you revisit our website.",
+      },
+    ],
+  },
+  {
+    id: "section-4",
+    title: "Third-party functionality",
+    description: [
+      {
+        paragraph:
+          "Like most websites, we have included functionality provided by third parties. For example, we embed YouTube videos.",
+      },
+    ],
+  },
+  {
+    id: "section-5",
+    title: "Social website cookies",
+    description: [
+      {
+        paragraph:
+          "Like, comment, or share our content effortlessly on social media websites such as LinkedIn, Facebook, Instagram, and Twitter.",
+      },
+    ],
+  },
+  {
+    id: "section-6",
+    title: "Analytics cookies",
+    description: [
+      {
+        paragraph: `Sahaj uses Google Analytics and Hotjar cookies to consolidate visitor statistics, such as the number of people visiting our website, the device's IP address (processed during your session and stored in a de-identified form), screen size, device type (unique device identifiers), browser information, geographic location, and the preferred language. This enables us to improve our website with user feedback. These so-called "analytics" systems also tell us how people reach our site (for example, through search engines, social media, or referrals) and whether they have been here before, helping us to optimize our marketing spend. Hotjar only runs on our marketing site and not within our app. Hotjar stores information in a pseudonym user profile, and they are contractually forbidden to sell any user data collected on our behalf.`,
+      },
+    ],
+  },
+  {
+    id: "section-7",
+    title: "Remarketing cookies",
+    description: [
+      {
+        paragraph: `You may have seen an increased number of adverts from the site you recently visited. These are paid adverts to encourage you to return to our site. This is possible by using remarketing cookies we may place during your visit.`,
+      },
+    ],
+  },
+  {
+    id: "section-8",
+    title: "How do I change my cookie settings?",
+    description: [
+      {
+        paragraph: `You can control the cookies from browser settings. However, please note that some cookies are essential for the smooth functioning of the Sahaj website. Please visit the ICO's website for information on how to do this.`,
+      },
+    ],
+  },
+  {
+    id: "section-9",
+    title: "Further information",
+    description: [
+      {
+        paragraph: `For more information on our use of cookies, data collection process, and use personal information in accordance with data protection law, please visit our Privacy Policy.`,
       },
     ],
   },

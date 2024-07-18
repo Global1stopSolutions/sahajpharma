@@ -17,7 +17,8 @@ import { usePathname } from "next/navigation";
 export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const params = usePathname();
-  const showCarrerCard = params === "/privacy-policy" ? false : true;
+  const showCarrerCard =
+    params === "/privacy-policy" || params === "/cookie-policy" ? false : true;
 
   useEffect(() => {
     setYear(new Date().getFullYear());
