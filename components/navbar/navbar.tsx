@@ -1,15 +1,18 @@
 "use client";
 import {
-  Navbar as NextUINavbar,
-  NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
+  Navbar,
   NavbarBrand,
-  NavbarItem,
+  NavbarMenuToggle,
   NavbarMenuItem,
-} from "@nextui-org/navbar";
+  NavbarMenu,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+} from "@nextui-org/react";
+// import {AcmeLogo} from "./AcmeLogo.jsx";
 
-import { Link } from "@nextui-org/link";
+// import { Link } from "@nextui-org/link";
 import React, { useEffect, useState } from "react";
 
 import { siteConfig } from "@/config/site";
@@ -22,7 +25,9 @@ import { usePathname } from "next/navigation";
 import { Inputformfield } from "../input/input-form-field";
 // import { LangDropdown } from "../language-dropdown";
 
-export const Navbar = () => {
+export const MainNavbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   //mobile side bar active //
   const [isActive, setIsActive] = useState(false);
 
@@ -45,21 +50,24 @@ export const Navbar = () => {
   return (
     <>
       <Topnavbar />
-
-      <NextUINavbar
-        shouldHideOnScroll={false}
-        isBlurred={true}
+      <Navbar
+        isBordered
         className="navbar-wrapper"
         height="var(--custom-header-height)"
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
         maxWidth="full"
         classNames={{
-          menu: ` absolute`,
+          menu: ``,
         }}
       >
-        <NavbarContent justify="start">
-          <NavbarBrand as="li" className="gap-3 max-w-fit">
-            <NextLink className="flex justify-start items-center gap-1" href="/">
-              <div className="sm:h-[92px] sm:w-[92px] h-[70px] w-[70px] relative">
+        <NavbarContent className="sm:hidden pr-3" justify="center">
+          <NavbarBrand>
+            <NextLink
+              className="flex justify-start items-center gap-1"
+              href="/"
+            >
+              <div className="sm:h-[60px] sm:w-[60px] h-[60px] w-[60px] relative">
                 <Image
                   className="overflow-visible "
                   as={NextImage}
@@ -74,21 +82,48 @@ export const Navbar = () => {
               </div>
             </NextLink>
           </NavbarBrand>
-          <ul className="hidden lg:flex gap-4 justify-end space-x-8 grow ml-2">
+        </NavbarContent>
+
+        <NavbarContent className="hidden sm:flex gap-4" justify="start">
+          <NextLink className="flex justify-start items-center gap-1" href="/">
+            <div className="sm:h-[60px] sm:w-[60px] h-[60px] w-[60px] relative">
+              <Image
+                className="overflow-visible "
+                as={NextImage}
+                width={0}
+                height={0}
+                style={{ width: "auto", height: "auto" }}
+                src="/images/logo.svg"
+                alt="logo"
+                loading="eager"
+                quality={100}
+              />
+            </div>
+          </NextLink>
+        </NavbarContent>
+
+        <NavbarContent justify="end">
+          <ul className="hidden sm:flex gap-9 justify-end grow ml-2">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
                 <NextLink
                   className={
-                    currentPath === item.href ? "navigation-active-link" : "navigation-link"
+                    currentPath === item.href
+                      ? "navigation-active-link"
+                      : "navigation-link"
                   }
                   href={item.href}
                 >
                   {item.label}
-                  <span className={currentPath === item.href ? "active-link-border" : ""} />
+                  <span
+                    className={
+                      currentPath === item.href ? "active-link-border" : ""
+                    }
+                  />
                 </NextLink>
               </NavbarItem>
             ))}
-            <div className="">
+            {/* <div className="">
               <i
                 className="ic-search text-2xl cursor-pointer border-l pl-unit-md border-content1-oldsilver text-content1-quartz hover:text-primary duration-700"
                 onClick={search}
@@ -106,56 +141,50 @@ export const Navbar = () => {
                   />
                 )}
               </div>
-            </div>
+            </div> */}
           </ul>
         </NavbarContent>
 
-        <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
-          <NavbarMenuToggle onClick={() => setIsActive(!isActive)} />
-          <div className="">
-            <i
-              className="ic-search text-2xl cursor-pointer border-l pl-unit-md border-content1-oldsilver text-content1-quartz hover:text-primary duration-700"
-              onClick={search}
-            />
-            <div className="absolute bottom-0 right-[17px]">
-              {searchIsOpen && (
-                <Inputformfield
-                  label="Name"
-                  type="text"
-                  labePlacement="outside"
-                  placeholder="Search here"
-                  radius="sm"
-                  variant="text-form-field"
-                  isLabelHidden={true}
-                />
-              )}
-            </div>
-          </div>
+        <NavbarContent className="sm:hidden" justify="end">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          />
         </NavbarContent>
 
-        <NavbarMenu className={isActive ? "navbar-menu-trs" : "w-0"}>
-          <div className="flex flex-col" style={{ height: "calc(100vh - 14%)" }}>
-            <div className="mx-4 mt-2 flex flex-col gap-2 grow">
+        <NavbarMenu>
+          <div className="flex flex-col h-full pt-8">
+            <div className="mt-2 flex flex-col gap-2 grow">
               {siteConfig.navMenuItems.map((item, index) => (
-                <NavbarMenuItem key={`${item}-${index}`}>
+                <NavbarMenuItem
+                  key={`${item}-${index}`}
+                  className="border-b border-primary"
+                >
                   <NextLink
-                    className={
-                      currentPath === item.href ? "navigation-active-link" : "navigation-link"
-                    }
+                    className={` 
+                      ${
+                        currentPath === item.href
+                          ? "navigation-active-link"
+                          : "navigation-link"
+                      }
+                    `}
                     href={item.href}
                   >
                     {item.label}
-                    <span className={currentPath === item.href ? "active-link-border" : ""} />
+                    <span
+                      className={
+                        currentPath === item.href ? "active-link-border" : ""
+                      }
+                    />
                   </NextLink>
                 </NavbarMenuItem>
               ))}
             </div>
-            <div className="pb-unit-md border-t-1 border-gray-400 h-[100px]">
-              <div className="sm:block">{/* <LangDropdown /> */}</div>
-            </div>
+            {/* <div className="pb-unit-md border-t-1 border-gray-400">
+              <div className="sm:block"><LangDropdown /></div>
+            </div> */}
           </div>
         </NavbarMenu>
-      </NextUINavbar>
+      </Navbar>
     </>
   );
 };

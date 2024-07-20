@@ -23,6 +23,8 @@ module.exports = {
         "job-seeker-hero": "url('/images/job-seeker-hero.jpg')",
         "slider-left-arrow": "url('/images/slider-left-arrow.svg')",
         "slider-right-arrow": "url('/images/slider-right-arrow.svg')",
+        "privacy-policy": "url('/images/privacy-policy.jpg')",
+        "cookie-policy": "url('/images/cookie-policy.jpg')",
       },
     },
     container: {

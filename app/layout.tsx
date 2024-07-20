@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontInter } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar/navbar";
+import { MainNavbar } from "@/components/navbar/navbar";
 import clsx from "clsx";
 import { Footer } from "@/components/footer/footer";
 import Script from "next/script";
@@ -43,8 +43,8 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex flex-col h-screen overflow-auto">
-            <Navbar />
+          <div className="relative flex flex-col">
+            <MainNavbar />
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
