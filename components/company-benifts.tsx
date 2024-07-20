@@ -9,7 +9,7 @@ export const Companybenfits = () => {
   return (
     <>
       <Containerwrapper>
-        <div className="sm:flex items-center">
+        <div className="sm:flex items-center mt-40 inline-block">
           <div className="flex flex-col space-y-unit-3xl basis-3/6">
             <HeadingDetail
               titleWidth="w-full"

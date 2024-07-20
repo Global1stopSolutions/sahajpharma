@@ -9,7 +9,7 @@ export const Teams = () => {
   return (
     <>
       <Containerwrapper>
-        <div className="mt-unit-4xl flex flex-col space-y-unit-3xl">
+        <div className="mt-unit-5xl sm:mt-unit-4xl flex flex-col space-y-unit-3xl">
           <HeadingDetail
             titleWidth="sm:w-[60%] w-full"
             contentCenter
