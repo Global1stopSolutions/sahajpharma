@@ -3,12 +3,7 @@ import React from "react";
 import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "../button/button";
-import {
-  CATEGORIES,
-  COMPANY,
-  FOOTER_LINK_DETAILS,
-  SOCIAL_LINKS,
-} from "@/constants";
+import { CATEGORIES, COMPANY, FOOTER_LINK_DETAILS, SOCIAL_LINKS } from "@/constants";
 import { Inputformfield } from "../input/input-form-field";
 import { useState, useEffect } from "react";
 import { Containerwrapper } from "../container/container-wrapper";
@@ -18,7 +13,9 @@ export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const params = usePathname();
   const showCarrerCard =
-    params === "/privacy-policy" || params === "/cookie-policy" ? false : true;
+    params === "/privacy-policy" || params === "/cookie-policy" || params === "/job-seeker"
+      ? false
+      : true;
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -43,8 +40,8 @@ export const Footer = () => {
                     Looking for a career change? Browse our job listings now!
                   </label>
                   <p className="text-content1-oldsilver text-small sm:w-[60%]">
-                    Secure a job that you love and aligns with your career
-                    vision. Find the recent openings in your field.
+                    Secure a job that you love and aligns with your career vision. Find the recent
+                    openings in your field.
                   </p>
                   <Link href="/job-seeker">
                     <ButtonDefault variant="btn-primary" title="Apply Now" />
@@ -78,9 +75,9 @@ export const Footer = () => {
               quality={100}
             />
             <p className="text-white text-tiny">
-              Our platform keeps sending endless opportunities your way in a
-              simplified and efficient manner. We provide the job openings that
-              interests you along with ways to strengthen your profile.
+              Our platform keeps sending endless opportunities your way in a simplified and
+              efficient manner. We provide the job openings that interests you along with ways to
+              strengthen your profile.
             </p>
             <ul className="flex space-x-unit-md">
               {SOCIAL_LINKS.map((socialLinks, index) => (
@@ -146,7 +143,17 @@ export const Footer = () => {
         </div>
         <div className="border-t border-gray-600 my-unit-lg" />
         <div className="sm:flex items-center  justify-between pb-unit-md">
-          <p className="text-white text-tiny">{`© ${year} Copyrights by Globalsolutions. All Rights Reserved`}</p>
+          <p className="text-white text-tiny">
+            {`© ${year} Copyrights by `}
+            <Link
+              href="https://forms.gle/Rb2NqPJRjeZSJu3N6"
+              target="_blank"
+              className="text-white text-tiny hover:text-primary hover:duration-700 cursor-pointer"
+            >
+              Global Solutions
+            </Link>
+            {`. All Rights Reserved`}
+          </p>
           <div className="flex divide-x-[2px] divide-primary sm:mt-0 mt-unit-md">
             {FOOTER_LINK_DETAILS.map((footerLink, index) => (
               <div key={index} className="flex items-center px-unit-xs">

@@ -20,7 +20,7 @@ export const Expertcommunity = () => {
           }
         });
       });
-    }, 100);
+    }, 10);
 
     return () => clearInterval(interval);
   }, []);
