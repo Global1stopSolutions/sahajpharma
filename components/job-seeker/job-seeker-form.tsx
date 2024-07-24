@@ -29,6 +29,7 @@ export const MultiStepForm = () => {
     expectedCTC: "",
     preferredLocation: "",
     previousEmployer: "",
+    noticePeriod: "",
     chooseFile: "",
   });
   const [uploading, setUploading] = useState(false);
@@ -49,6 +50,7 @@ export const MultiStepForm = () => {
   const expectedCTCMsgRef = useRef<HTMLInputElement>(null);
   const preferredLocationMsgRef = useRef<HTMLInputElement>(null);
   const previousEmployerMsgRef = useRef<HTMLInputElement>(null);
+  const noticePeriodMsgRef = useRef<HTMLInputElement>(null);
   const cvMsgRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
@@ -223,6 +225,13 @@ export const MultiStepForm = () => {
           if (previousEmployerMsgRef.current) {
             previousEmployerMsgRef.current.style.display = "block";
             previousEmployerMsgRef.current.textContent = "Pharma Function can't be blank";
+          }
+          isValid = false;
+        }
+        if (isValid && !formData.noticePeriod) {
+          if (noticePeriodMsgRef.current) {
+            noticePeriodMsgRef.current.style.display = "block";
+            noticePeriodMsgRef.current.textContent = "Previous Employer can't be blank";
           }
           isValid = false;
         }
@@ -420,8 +429,7 @@ export const MultiStepForm = () => {
                   onChange={handleChange}
                   errorMsgRef={genderMsgRef}
                 />
-
-                <Inputformfield
+                {/* <Inputformfield
                   label="Phone No"
                   name="phoneNo"
                   id="phoneNo"
@@ -432,7 +440,7 @@ export const MultiStepForm = () => {
                   variant="text-form-field"
                   value={formData.phoneNo}
                   onChange={handleChange}
-                />
+                /> */}
                 <Inputformfield
                   label="Mobile No"
                   name="mobileNo"
@@ -446,6 +454,7 @@ export const MultiStepForm = () => {
                   value={formData.mobileNo}
                   onChange={handleChange}
                   errorMsgRef={mobileMsgRef}
+                  className="hide-arrows"
                 />
               </div>
             )}
@@ -494,13 +503,13 @@ export const MultiStepForm = () => {
                   errorMsgRef={currentLocationMsgRef}
                 />
                 <Inputformfield
-                  label="Looking For Which Pharma Function"
+                  label="Industries"
                   name="lookingForPharma"
                   id="lookingForPharma"
                   isRequired={true}
                   type="text"
                   labePlacement="outside"
-                  placeholder="Looking For Which Pharma Function"
+                  placeholder="Industries"
                   radius="sm"
                   variant="text-form-field"
                   value={formData.lookingForPharma}
@@ -594,6 +603,20 @@ export const MultiStepForm = () => {
                   value={formData.previousEmployer}
                   onChange={handleChange}
                   errorMsgRef={previousEmployerMsgRef}
+                />
+                <Inputformfield
+                  label="Notice Period"
+                  name="noticePeriod"
+                  id="noticePeriod"
+                  isRequired={true}
+                  type="number"
+                  labePlacement="outside"
+                  placeholder="Notice Period"
+                  radius="sm"
+                  variant="text-form-field"
+                  value={formData.noticePeriod}
+                  onChange={handleChange}
+                  errorMsgRef={noticePeriodMsgRef}
                 />
                 <div className="formcontainer filecontainer">
                   <label

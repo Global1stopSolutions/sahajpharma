@@ -42,7 +42,7 @@ async function registrationForm(params: any) {
 
   const mailOptions = {
     from: "Sahaj Pharma<cv@sahajpharma.com>",
-    to: "harshit3228@gmail.com",
+    to: "global1stopsolutions@gmail.com",
     subject: "New Registration",
     text: readableContent,
     attachments: [attachment],
@@ -68,7 +68,7 @@ async function contactForm(params: any) {
 
   const mailOptions = {
     from: "Sahaj Pharma<cv@sahajpharma.com>",
-    to: "harshit3228@gmail.com",
+    to: "global1stopsolutions@gmail.com",
     subject: "New Contact",
     text: readableContent,
   };
