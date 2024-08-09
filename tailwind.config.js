@@ -106,7 +106,7 @@ module.exports = {
             content1: {
               opacity1: "rgba(7,7,7,25%)",
               cultured: "#F5F4F5",
-              oldsilver: "#8A8A82",
+              oldsilver: "#474743",
               charlestonGreen: "#292929",
               quartz: "#4B4B4B",
               eerieBlack: "#1E1E1E",

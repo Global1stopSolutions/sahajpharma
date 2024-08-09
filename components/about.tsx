@@ -27,7 +27,7 @@ export const AboutDetail = ({ children, imgageRight }: AboutDetailProps) => {
   return (
     <>
       <Containerwrapper>
-        <div className="sm:flex gap-unit-2xl ">
+        <div className="sm:flex gap-unit-2xl md:mt-44">
           <div
             className={`sm:basis-3/6 w-full relative mt-20 inline-block ${
               imgageRight ? "order-2 flex justify-center" : ""

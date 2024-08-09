@@ -3,7 +3,12 @@ import React from "react";
 import { Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { ButtonDefault } from "../button/button";
-import { CATEGORIES, COMPANY, FOOTER_LINK_DETAILS, SOCIAL_LINKS } from "@/constants";
+import {
+  CATEGORIES,
+  COMPANY,
+  FOOTER_LINK_DETAILS,
+  SOCIAL_LINKS,
+} from "@/constants";
 import { Inputformfield } from "../input/input-form-field";
 import { useState, useEffect } from "react";
 import { Containerwrapper } from "../container/container-wrapper";
@@ -13,7 +18,9 @@ export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const params = usePathname();
   const showCarrerCard =
-    params === "/privacy-policy" || params === "/cookie-policy" || params === "/job-seeker"
+    params === "/privacy-policy" ||
+    params === "/cookie-policy" ||
+    params === "/job-seeker"
       ? false
       : true;
 
@@ -31,7 +38,7 @@ export const Footer = () => {
         }`}
       >
         {showCarrerCard && (
-          <div className="bg-white p-unit-xl rounded-lg sm:mt-[-20%] mt-[-10%] shadow-medium">
+          <div className="bg-white p-unit-xl rounded-lg mt-[-100px] md:mt-[-130px] shadow-medium">
             <div className="carrer-job">
               <div className="overlay" />
               <div className="flex relative">
@@ -40,8 +47,8 @@ export const Footer = () => {
                     Looking for a career change? Browse our job listings now!
                   </label>
                   <p className="text-content1-oldsilver text-small sm:w-[60%]">
-                    Secure a job that you love and aligns with your career vision. Find the recent
-                    openings in your field.
+                    Secure a job that you love and aligns with your career
+                    vision. Find the recent openings in your field.
                   </p>
                   <Link href="/job-seeker">
                     <ButtonDefault variant="btn-primary" title="Apply Now" />
@@ -75,9 +82,9 @@ export const Footer = () => {
               quality={100}
             />
             <p className="text-white text-tiny">
-              Our platform keeps sending endless opportunities your way in a simplified and
-              efficient manner. We provide the job openings that interests you along with ways to
-              strengthen your profile.
+              Our platform keeps sending endless opportunities your way in a
+              simplified and efficient manner. We provide the job openings that
+              interests you along with ways to strengthen your profile.
             </p>
             <ul className="flex space-x-unit-md">
               {SOCIAL_LINKS.map((socialLinks, index) => (

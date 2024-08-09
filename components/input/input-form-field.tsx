@@ -62,7 +62,7 @@ export const Inputformfield = ({
                 inputWrapper: `text-white !cursor-text ${
                   isInputSecondary
                     ? "rounded-none min-h-[75px] bg-secondary data-[hover=true]:bg-secondary group-data-[focus=true]:bg-secondary"
-                    : "bg-content1-cultured data-[hover=true]:bg-default-200"
+                    : "bg-content1-cultured data-[hover=true]:bg-default-200 text-foreground-500"
                 }`,
                 label: `${
                   isLabelHidden
@@ -78,7 +78,9 @@ export const Inputformfield = ({
               endContent={endContent}
               className={className}
             />
-            {isRequired && <span ref={errorMsgRef} className="formerror"></span>}
+            {isRequired && (
+              <span ref={errorMsgRef} className="formerror"></span>
+            )}
           </>
         )}
 
@@ -93,7 +95,8 @@ export const Inputformfield = ({
             value={value}
             onChange={onChange}
             classNames={{
-              inputWrapper: "bg-content1-cultured data-[hover=true]:bg-default-200",
+              inputWrapper:
+                "bg-content1-cultured data-[hover=true]:bg-default-200",
               label: "text-base text-content1-charlestonGreen font-medium",
               input: "min-h-[100px]",
             }}

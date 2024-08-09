@@ -13,7 +13,7 @@
   --lh-heading-4: 55px;
   --font-heading-3: 32px;
   --lh-heading-3: 45px;
-  --custom-header-height: 75px;
+  --custom-header-height: 85px;
 }
 @layer base {
   .font-Inter {
@@ -127,6 +127,10 @@
   &.cookie-policy-bg {
     @apply bg-cookie-policy;
   }
+}
+
+.banner-image {
+  @apply md:h-[400px] md:w-[400px] w-[300px] h-[300px];
 }
 .input-label-hidden {
   &.data-[has-label="true"] {

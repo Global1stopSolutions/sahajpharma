@@ -27,14 +27,13 @@ export const HeroSection = () => {
           <div className="w-full sm:w-3/6 flex items-center justify-center mt-unit-3xl sm:mt-unit-0">
             <div className="relative">
               <Image
-                className="overflow-visible"
+                className="overflow-visible banner-image"
                 as={NextImage}
                 src="/images/hero.png"
                 alt="hero"
                 width={0}
                 height={0}
-                sizes="(min-width: 330px) 100%"
-                style={{ width: "auto", height: "auto", objectFit: "cover" }}
+                sizes="100%"
                 loading="eager"
                 quality={100}
               />
